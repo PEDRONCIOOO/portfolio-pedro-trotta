@@ -8,16 +8,6 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
-
-  async redirects() {
-    return [
-      {
-        source: "/:path*",  
-        destination: "https://www.trotta.dev/:path*",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default withMDX(nextConfig);
