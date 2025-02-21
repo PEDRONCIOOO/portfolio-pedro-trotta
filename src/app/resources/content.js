@@ -1,15 +1,15 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Pedro",
+  lastName: "Trotta",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  role: "Front-end Engineer",
+  avatar: "/images/pedro.jpeg",
+  location: "America/Sao_Paulo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Portuguese"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -29,12 +29,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/PEDRONCIOOO",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/pedro-trotta-853b17323/",
   },
   {
     name: "X",
@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:faq@trotta.dev",
   },
 ];
 
@@ -52,11 +52,11 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Front-end Engineer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Pedro, a software engineer at <InlineCode>Axia</InlineCode>, where I craft intuitive
+      <br /> user experiences and escalable APIS. After hours, I build my own projects.
     </>
   ),
 };
@@ -74,30 +74,30 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/pedro-trotta",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
+        Pedro is a Brazilian-based design engineer with a passion for transforming complex challenges
         into simple, elegant design solutions. Her work spans digital interfaces, interactive
         experiences, and the convergence of design and technology.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
+        company: "Aldax",
+        timeframe: "2022 - 2023",
         role: "Senior Design Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
+            Redesigned the UI/UX for the Aldax E-commerce platform, resulting in a 20% increase in user
             engagement and 30% faster load times.
           </>,
           <>
@@ -116,13 +116,13 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Bella",
+        timeframe: "2023 - 2024",
+        role: "Software Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Developed a intern system that unified the brand across multiple platforms, improving
+            conversions consistency by 40%.
           </>,
           <>
             Led a cross-functional team to launch a new product line, contributing to a 15% increase
@@ -138,8 +138,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
+        name: "University of Dom Bosco",
         description: <>Studied software engineering.</>,
+      },
+      {
+        name: "Harvard Crash Course Online",
+        description: <>Studied web development.</>,
       },
       {
         name: "Build the Future",
@@ -152,8 +156,8 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "TypeScript",
+        description: <>Able to make landing pages with unnatural speed.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -172,7 +176,7 @@ const about = {
       },
       {
         title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        description: <>Building next generation apps with Next.js</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
