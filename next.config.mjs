@@ -12,8 +12,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "https://trotta.dev/:path*",
-        has: [{ type: "host", value: "trotta.dev" }],
+        source: "/:path*",  
         destination: "https://www.trotta.dev/:path*",
         permanent: true,
       },
