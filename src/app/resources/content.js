@@ -55,7 +55,7 @@ const home = {
   headline: <>Front-end Engineer</>,
   subline: (
     <>
-      I'm Pedro, a software engineer at <InlineCode>Globoo</InlineCode>, where I craft intuitive
+      I'm Pedro, a software engineer at <InlineCode>Globoo.io</InlineCode>, where I craft intuitive
       <br /> user experiences and escalable APIS. After hours, I build my own projects.
     </>
   ),
