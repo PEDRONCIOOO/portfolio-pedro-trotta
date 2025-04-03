@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:faq@trotta.dev",
+    link: "mailto:pedrot.developer@globoo.io",
   },
 ];
 
@@ -82,8 +82,8 @@ const about = {
     description: (
       <>
         Pedro is a Brazilian-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        into simple, elegant design solutions. His work spans digital interfaces, interactive
+        experiences, and the convergence of design and advanced technology.
       </>
     ),
   },
