@@ -157,7 +157,7 @@ const about = {
     skills: [
       {
         title: "TypeScript",
-        description: <>Able to make landing pages with unnatural speed.</>,
+        description: <>Able to make professional's landing pages with unatural speed.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -168,6 +168,37 @@ const about = {
           },
           {
             src: "/images/projects/project-01/cover-03.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Python",
+        description: <>Building scalable APIs with Python.</>,
+        images: [
+          {
+            src: "/images/projects/project-01/harada-ai.png",
+            alt: "Harada AI Model",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/harada-ai2.png",
+            alt: "Harada AI Model",
+            width: 16,
+            height: 9,
+          },
+        ]
+      },
+      {
+        title: "React",
+        description: <>Building interactive UIs with React.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/react.png",
             alt: "Project image",
             width: 16,
             height: 9,
