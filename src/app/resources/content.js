@@ -81,9 +81,9 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Pedro is a Brazilian-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. His work spans digital interfaces, interactive
-        experiences, and the convergence of design and advanced technology.
+        Pedro is a Brazilian-based full stack software engineer with a passion for transforming complex challenges
+        into efficient, scalable solutions. His work spans frontend interfaces, backend systems,
+        and the integration of cutting-edge technologies to build complete software ecosystems.
       </>
     ),
   },
