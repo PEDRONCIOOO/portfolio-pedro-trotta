@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Front-end Engineer",
+  role: "Software Engineer",
   avatar: "/images/pedro.jpeg",
   location: "America/Sao_Paulo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Portuguese"], // optional: Leave the array empty if you don't want to display languages
@@ -34,7 +34,7 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/pedro-trotta-853b17323/",
+    link: "https://www.linkedin.com/in/pedro-forte-853b17323/",
   },
   {
     name: "X",
@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:pedrot.developer@globoo.io",
+    link: "mailto:pedroforte1911@gmail.com",
   },
 ];
 
