@@ -18,11 +18,11 @@ export async function generateMetadata() {
     title: home.title,
     description: home.description,
     openGraph: {
-      title: `${person.firstName}'s Portfolio`,
+      title: `${person.firstName} Portfolio`,
       description: "Pedro Trotta Front-End Developer with +5 years of professional experience.",
       url: baseURL,
       siteName: `${person.firstName}'s Portfolio`,
-      locale: "en_US",
+      locale: "pt_BR",
       type: "website",
     },
     robots: {
@@ -49,14 +49,8 @@ type FontConfig = {
   variable: string;
 };
 
-/*
-	Replace with code for secondary and tertiary fonts
-	from https://once-ui.com/customize
-*/
 const secondary: FontConfig | undefined = undefined;
 const tertiary: FontConfig | undefined = undefined;
-/*
- */
 
 const code = Source_Code_Pro({
   variable: "--font-code",
