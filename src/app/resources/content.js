@@ -8,7 +8,7 @@ const person = {
   },
   role: "Software Engineer",
   avatar: "/images/pedro.jpeg",
-  location: "America/Sao_Paulo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "America/Campo_Grande", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Portuguese"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -50,13 +50,13 @@ const social = [
 
 const home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name} Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Software Engineer</>,
   subline: (
     <>
-      I'm Pedro, a software engineer at <InlineCode>Globoo.io</InlineCode>, where I craft intuitive
-      <br /> user experiences and escalable APIS. After hours, I build my own projects.
+      I'm Pedro, a Senior Software Engineer at <InlineCode>Globoo.io</InlineCode>, where I craft intuitive
+      <br /> user experiences and scalable APIs. After hours, I build my own projects.
     </>
   ),
 };
@@ -81,138 +81,177 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Pedro is a Brazilian-based full stack software engineer with a passion for transforming complex challenges
-        into efficient, scalable solutions. His work spans frontend interfaces, backend systems,
-        and the integration of cutting-edge technologies to build complete software ecosystems.
+        Pedro is a Brazilian-based full-stack software engineer specializing in cutting-edge technologies 
+        and cloud-native solutions. With expertise spanning frontend frameworks, backend architectures, 
+        DevOps practices, and AWS cloud services, he transforms complex business requirements into 
+        scalable, high-performance software ecosystems that drive innovation.
       </>
     ),
   },
   work: {
-    display: false, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Current Role",
     experiences: [
       {
-        company: "Aldax",
-        timeframe: "2022 - 2023",
-        role: "Senior Design Engineer",
+        company: "Globoo.io",
+        timeframe: "2025 - Present",
+        role: "Senior Full-Stack Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the Aldax E-commerce platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Architected and deployed microservices on <InlineCode>AWS EKS</InlineCode> with 
+            <InlineCode>Docker</InlineCode> and <InlineCode>Kubernetes</InlineCode>, achieving 99.9% uptime 
+            and reducing deployment time by 75%.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Built real-time applications using <InlineCode>Next.js 14</InlineCode>, 
+            <InlineCode>TypeScript</InlineCode>, and <InlineCode>WebSocket</InlineCode> APIs, 
+            serving 10K+ concurrent users with sub-100ms response times.
+          </>,
+          <>
+            Implemented CI/CD pipelines with <InlineCode>GitHub Actions</InlineCode> and 
+            <InlineCode>AWS CodePipeline</InlineCode>, enabling automated testing and zero-downtime deployments.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            src: "/images/projects/project-01/appgloboo.png",
+            alt: "App Globoo",
             width: 16,
             height: 9,
           },
+          {
+            src: "/images/projects/project-01/appgloboo4.png",
+            alt: "App Globoo",
+            width: 16,
+            height: 9,
+          }
         ],
+      }
+    ],
+  },
+  // Nova seção: Parceiros & Afiliados
+  partners: {
+    display: true,
+    title: "Partners & Affiliates",
+    description: (
+      <>
+        I collaborate with innovative companies and visionary teams, delivering high-impact solutions as a trusted technology partner. Here are some of the organizations I’ve proudly worked with:
+      </>
+    ),
+    companies: [
+      {
+        name: "Globoo.io",
+        logo: "/images/partners/globoo-logo.png",
+        link: "https://globoo.io",
+        description: "Digital banking & crypto exchange platform, where I lead software engineering initiatives."
       },
       {
-        company: "Bella",
-        timeframe: "2023 - 2024",
-        role: "Software Engineer",
-        achievements: [
-          <>
-            Developed a intern system that unified the brand across multiple platforms, improving
-            conversions consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
+        name: "Axia Digital",
+        logo: "/images/partners/logo-axia.png",
+        link: "https://axiadigitalsolutions.com/",
+        description: "Digital solutions, cybersecurity, and consulting services."
+      },
+      {
+        name: "Casa do Crédito",
+        logo: "/images/partners/casa-do-credito.png",
+        link: "https://casadocredito.com.br/",
+        description: "Digital banking & financial software services"
+      },
+      {
+        name: "Brasil Bitcoin",
+        logo: "/images/partners/brasil-bitcoin.svg",
+        link: "https://brasilbitcoin.com.br/",
+        description: "Exchange platform for cryptocurrencies and digital assets."
+      },
+      {
+        name: "Bybit",
+        logo: "/images/partners/bybit.png",
+        link: "https://bybit.com/",
+        description: "Cryptocurrency exchange platform."
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Studies & Certifications",
     institutions: [
       {
+        name: "AWS Certified Solutions Architect",
+        description: <>Advanced cloud architecture and services design on Amazon Web Services.</>,
+      },
+      {
         name: "University of Dom Bosco",
-        description: <>Studied software engineering.</>,
+        description: <>Bachelor's in Software Engineering with focus on distributed systems.</>,
       },
       {
-        name: "Harvard Crash Course Online",
-        description: <>Studied web development.</>,
+        name: "Meta Frontend Developer Professional",
+        description: <>Advanced React, JavaScript ES6+, and modern frontend development practices.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Google Cloud Professional Developer",
+        description: <>Cloud-native application development and containerization strategies.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Expertise",
     skills: [
       {
-        title: "TypeScript",
-        description: <>Able to make professional's landing pages with unatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Frontend Technologies",
+        description: <>Building modern, responsive applications with <InlineCode>React 18</InlineCode>, <InlineCode>Next.js 14</InlineCode>, <InlineCode>TypeScript</InlineCode>, and <InlineCode>Tailwind CSS</InlineCode>. Expert in state management with <InlineCode>Zustand</InlineCode> and <InlineCode>React Query</InlineCode>.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
+            alt: "Modern React Application",
             width: 16,
             height: 9,
           },
           {
             src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            alt: "TypeScript Dashboard",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Python",
-        description: <>Building scalable APIs with Python.</>,
+        title: "Backend & APIs",
+        description: <>Developing scalable backend systems with <InlineCode>Node.js</InlineCode>, <InlineCode>Python FastAPI</InlineCode>, <InlineCode>Express.js</InlineCode>, and <InlineCode>GraphQL</InlineCode>. Database expertise in <InlineCode>PostgreSQL</InlineCode>, <InlineCode>MongoDB</InlineCode>, and <InlineCode>Redis</InlineCode>.</>,
         images: [
           {
             src: "/images/projects/project-01/harada-ai.png",
-            alt: "Harada AI Model",
+            alt: "API Architecture",
             width: 16,
             height: 9,
           },
           {
             src: "/images/projects/project-01/harada-ai2.png",
-            alt: "Harada AI Model",
+            alt: "Microservices Design",
             width: 16,
             height: 9,
           },
         ]
       },
       {
-        title: "React",
-        description: <>Building interactive UIs with React.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Cloud & DevOps",
+        description: <>AWS cloud architecture with <InlineCode>EC2</InlineCode>, <InlineCode>Lambda</InlineCode>, <InlineCode>RDS</InlineCode>, <InlineCode>S3</InlineCode>, and <InlineCode>CloudFormation</InlineCode>. Container orchestration with <InlineCode>Docker</InlineCode> and <InlineCode>Kubernetes</InlineCode>. CI/CD with <InlineCode>GitHub Actions</InlineCode>.</>,
         images: [
           {
-            src: "/images/projects/project-01/react.png",
-            alt: "Project image",
+            src: "/images/projects/project-01/cloud-banner.jpg",
+            alt: "AWS Cloud Infrastructure",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next generation apps with Next.js</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Emerging Technologies",
+        description: <>AI/ML integration with <InlineCode>OpenAI API</InlineCode>, <InlineCode>LangChain</InlineCode>, and <InlineCode>TensorFlow</InlineCode>. Blockchain development with <InlineCode>Solidity</InlineCode> and <InlineCode>Web3.js</InlineCode>. Real-time features with <InlineCode>Socket.io</InlineCode> and <InlineCode>WebRTC</InlineCode>.</>,
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "/images/projects/project-01/blockchain.jpg",
+            alt: "AI Integration Project",
             width: 16,
             height: 9,
           },

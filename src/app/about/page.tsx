@@ -339,6 +339,51 @@ export default function About() {
               </Column>
             </>
           )}
+
+          {/* Seção Parceiros & Afiliados - Layout melhorado */}
+          {about.partners?.display && about.partners.companies.length > 0 && (
+            <>
+              <Heading
+                as="h2"
+                id={about.partners.title}
+                variant="display-strong-s"
+                marginBottom="m"
+                marginTop="40"
+              >
+                {about.partners.title}
+              </Heading>
+              <Text variant="body-default-m" marginBottom="l" onBackground="neutral-weak">
+                {about.partners.description}
+              </Text>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.partners.companies.map((company, index) => (
+                  <Column key={`${company.name}-${index}`} fillWidth>
+                    <Flex fillWidth horizontal="space-between" vertical="center" marginBottom="4">
+                      <Flex gap="12" vertical="center">
+                        <SmartImage
+                          src={company.logo}
+                          alt={company.name}
+                          width={7}
+                          height={7}
+                          radius="s"
+                          objectFit="contain"
+                        />
+                      </Flex>
+                      <IconButton
+                        href={company.link}
+                        icon="arrowUpRight"
+                        variant="secondary"
+                        size="s"
+                      />
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {company.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
         </Column>
       </Flex>
     </Column>
