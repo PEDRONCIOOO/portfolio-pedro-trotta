@@ -149,7 +149,7 @@ const about = {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
         link: "https://axiadigitalsolutions.com/",
-        description: "Digital solutions, cybersecurity, and consulting services."
+        description: "Digital solutions, cybersecurity, and blockchain development."
       },
       {
         name: "Casa do Crédito",
