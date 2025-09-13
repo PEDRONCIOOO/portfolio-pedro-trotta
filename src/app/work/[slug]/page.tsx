@@ -32,6 +32,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
     publishedAt: publishedTime,
     summary: description,
     images,
+    videos,
     image,
     team,
   } = post.metadata;
@@ -41,6 +42,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
     title,
     description,
     images,
+    videos,
     team,
     openGraph: {
       title,
@@ -105,7 +107,29 @@ export default function Project({ params }: WorkParams) {
         </Button>
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>
       </Column>
-      {post.metadata.images.length > 0 && (
+      {post.metadata.videos && post.metadata.videos.length > 0 ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={(e) => {
+            console.error("Video failed to load:", post.metadata.videos?.[0]);
+            console.error("Error details:", e);
+          }}
+          onLoadStart={() => console.log("Video loading started:", post.metadata.videos?.[0])}
+          onCanPlay={() => console.log("Video can play:", post.metadata.videos?.[0])}
+          style={{
+            width: "100%",
+            aspectRatio: "16 / 9",
+            borderRadius: "var(--radius-m)",
+            objectFit: "cover",
+          }}
+        >
+          <source src={post.metadata.videos?.[0]} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ) : post.metadata.images && post.metadata.images.length > 0 ? (
         <SmartImage
           priority
           aspectRatio="16 / 9"
@@ -113,7 +137,7 @@ export default function Project({ params }: WorkParams) {
           alt="image"
           src={post.metadata.images[0]}
         />
-      )}
+      ) : null}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <Flex gap="12" marginBottom="24" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
