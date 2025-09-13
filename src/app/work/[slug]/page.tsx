@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getPosts } from "@/app/utils/utils";
 import { AvatarGroup, Button, Column, Flex, Heading, SmartImage, Text } from "@/once-ui/components";
+import { VideoPlayer } from "@/components/VideoPlayer";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
@@ -108,27 +109,15 @@ export default function Project({ params }: WorkParams) {
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>
       </Column>
       {post.metadata.videos && post.metadata.videos.length > 0 ? (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          onError={(e) => {
-            console.error("Video failed to load:", post.metadata.videos?.[0]);
-            console.error("Error details:", e);
-          }}
-          onLoadStart={() => console.log("Video loading started:", post.metadata.videos?.[0])}
-          onCanPlay={() => console.log("Video can play:", post.metadata.videos?.[0])}
+        <VideoPlayer
+          src={post.metadata.videos[0]}
           style={{
             width: "100%",
             aspectRatio: "16 / 9",
             borderRadius: "var(--radius-m)",
             objectFit: "cover",
           }}
-        >
-          <source src={post.metadata.videos?.[0]} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
       ) : post.metadata.images && post.metadata.images.length > 0 ? (
         <SmartImage
           priority

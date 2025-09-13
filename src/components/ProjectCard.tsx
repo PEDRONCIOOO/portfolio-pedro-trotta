@@ -9,6 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@/once-ui/components";
+import { VideoPlayer } from "./VideoPlayer";
 
 interface ProjectCardProps {
   href: string;
@@ -35,27 +36,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Column fillWidth gap="m">
       {videos && videos.length > 0 ? (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          onError={(e) => {
-            console.error("ProjectCard video failed to load:", videos?.[0]);
-            console.error("Error details:", e);
-          }}
-          onLoadStart={() => console.log("ProjectCard video loading started:", videos?.[0])}
-          onCanPlay={() => console.log("ProjectCard video can play:", videos?.[0])}
+        <VideoPlayer
+          src={videos[0]}
           style={{
             width: "100%",
             aspectRatio: "16 / 9",
             borderRadius: "var(--radius-m)",
             objectFit: "cover",
           }}
-        >
-          <source src={videos?.[0]} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
       ) : (
         <Carousel
           sizes="(max-width: 960px) 100vw, 960px"
