@@ -9,7 +9,7 @@ const person = {
   role: "Software Engineer",
   avatar: "/images/pedro.jpeg",
   location: "America/Campo_Grande", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Portuguese"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Portuguese"],
 };
 
 const newsletter = {
@@ -17,7 +17,7 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
+      I occasionally write about ai, technology, and share thoughts on the intersection of
       creativity and engineering.
     </>
   ),
@@ -52,13 +52,18 @@ const home = {
   label: "Home",
   title: `${person.name} Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Software Engineer</>,
+  headline: <>Building the future of scalable platforms.</>,
   subline: (
     <>
-      I'm Pedro, a Senior Software Engineer at <InlineCode>Globoo.io</InlineCode>, where I craft intuitive
-      <br /> user experiences and scalable APIs. After hours, I build my own projects.
+      I'm <strong>Pedro Trotta</strong>, Senior Software Engineer at <InlineCode>Jungle Gaming</InlineCode>
+      <br />
+      With 6+ years of experience, architecting high-performance solutions
+      <br />
+      for iGaming & enterprise platforms.
     </>
   ),
+  ctaText: "View Projects",
+  downloadCV: "Download CV",
 };
 
 const about = {
@@ -93,7 +98,7 @@ const about = {
     title: "Current Role",
     experiences: [
       {
-        company: "Globoo.io",
+        company: "Jungle Gaming",
         timeframe: "2025 - Present",
         role: "Senior Full-Stack Engineer",
         achievements: [
@@ -103,24 +108,24 @@ const about = {
             and reducing deployment time by 75%.
           </>,
           <>
-            Built real-time applications using <InlineCode>Next.js 14</InlineCode>, 
+            Built real-time applications using <InlineCode>Nest.js</InlineCode>, 
             <InlineCode>TypeScript</InlineCode>, and <InlineCode>WebSocket</InlineCode> APIs, 
-            serving 10K+ concurrent users with sub-100ms response times.
+            serving 500K+ concurrent users with sub-10ms response times.
           </>,
           <>
-            Implemented CI/CD pipelines with <InlineCode>GitHub Actions</InlineCode> and 
+            Implemented CI/CD pipelines with <InlineCode>Azure Devops</InlineCode> and 
             <InlineCode>AWS CodePipeline</InlineCode>, enabling automated testing and zero-downtime deployments.
           </>,
         ],
         images: [
           {
-            src: "/images/projects/project-01/appgloboo.png",
+            src: "/images/projects/project-01/jungle-landing.png",
             alt: "App Globoo",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/appgloboo4.png",
+            src: "/images/projects/project-01/jungle-landing2.png",
             alt: "App Globoo",
             width: 16,
             height: 9,
@@ -140,6 +145,12 @@ const about = {
     ),
     companies: [
       {
+        name: "Jungle Gaming",
+        logo: "/images/partners/jungle-gaming.svg",
+        link: "https://junglegaming.io",
+        description: "Architecting high-performance solutions for iGaming & enterprise platforms.",
+      },
+      {
         name: "Globoo.io",
         logo: "/images/partners/globoo-logo.png",
         link: "https://globoo.io",
@@ -152,9 +163,9 @@ const about = {
         description: "Digital solutions, cybersecurity, and blockchain development."
       },
       {
-        name: "Casa do Crédito",
-        logo: "/images/partners/casa-do-credito.png",
-        link: "https://casadocredito.com.br/",
+        name: "AsaaS",
+        logo: "/images/partners/asaas-logo.webp",
+        link: "https://asaas.com/",
         description: "Digital banking & financial software services"
       },
       {
@@ -199,7 +210,7 @@ const about = {
     skills: [
       {
         title: "Frontend Technologies",
-        description: <>Building modern, responsive applications with <InlineCode>React 18</InlineCode>, <InlineCode>Next.js 14</InlineCode>, <InlineCode>TypeScript</InlineCode>, and <InlineCode>Tailwind CSS</InlineCode>. Expert in state management with <InlineCode>Zustand</InlineCode> and <InlineCode>React Query</InlineCode>.</>,
+        description: <>Building modern, responsive applications with <InlineCode>React</InlineCode>, <InlineCode>Next.js</InlineCode>, <InlineCode>TypeScript</InlineCode>, and <InlineCode>Tailwind CSS</InlineCode>. Expert in state management with <InlineCode>Zustand</InlineCode> and <InlineCode>React Query</InlineCode>.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",

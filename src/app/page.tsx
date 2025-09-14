@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Grid, Icon } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
+import { CodeTerminal } from "@/components/CodeTerminal";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
@@ -39,7 +40,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center">
+    <Column fillWidth gap="0" horizontal="center">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -62,58 +63,127 @@ export default function Home() {
           }),
         }}
       />
-      <Column fillWidth paddingY="l" gap="m">
-        <Column maxWidth="s">
-          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
-            <Heading wrap="balance" variant="display-strong-l">
-              {home.headline}
-            </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
-            </Text>
-          </RevealFx>
-          <RevealFx translateY="12" delay={0.4} horizontal="start">
-            <Button
-              id="about"
-              data-border="rounded"
-              href="/about"
-              variant="secondary"
-              size="m"
-              arrowIcon
-            >
-              <Flex gap="8" vertical="center">
-                {about.avatar.display && (
-                  <Avatar
-                    style={{ marginLeft: "-0.75rem", marginRight: "0.25rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
+
+      {/* Hero Section */}
+      <Flex fillWidth fillHeight horizontal="center" vertical="center" style={{ minHeight: "100vh" }}>
+        <Grid
+          columns="2"
+          tabletColumns="1"
+          mobileColumns="1"
+          gap="xl"
+          maxWidth="xl"
+          fillWidth
+        >
+          {/* Left Column - Text Content */}
+          <Column gap="xl" horizontal="start" vertical="center" fillHeight>
+            <Column gap="l">
+              <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="s">
+                <Heading wrap="balance" variant="display-strong-xl" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+                  {home.headline}
+                </Heading>
+              </RevealFx>
+
+              <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
+                <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l">
+                  {home.subline}
+                </Text>
+              </RevealFx>
+            </Column>
+
+            <RevealFx translateY="12" delay={0.4} horizontal="start">
+              <Flex gap="12" wrap mobileDirection="column">
+                <Button
+                  id="view-projects"
+                  data-border="rounded"
+                  href="/work"
+                  variant="primary"
+                  size="l"
+                  arrowIcon
+                >
+                  {home.ctaText}
+                </Button>
+
+                <Button
+                  id="download-cv"
+                  data-border="rounded"
+                  href="/cv/cv-trotta.pdf"
+                  variant="secondary"
+                  size="l"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Flex gap="8" vertical="center">
+                    <Icon name="arrowUpRightFromSquare" size="s" />
+                    {home.downloadCV}
+                  </Flex>
+                </Button>
+
+                <Button
+                  id="about"
+                  data-border="rounded"
+                  href="/about"
+                  variant="tertiary"
+                  size="l"
+                >
+                  <Flex gap="8" vertical="center">
+                    {about.avatar.display && (
+                      <Avatar
+                        style={{ marginLeft: "-0.25rem", marginRight: "0.25rem" }}
+                        src={person.avatar}
+                        size="s"
+                      />
+                    )}
+                    {about.title}
+                  </Flex>
+                </Button>
               </Flex>
-            </Button>
+            </RevealFx>
+
+            {/* Technology Icons */}
+            <RevealFx translateY="16" delay={0.6} horizontal="start">
+              <Flex gap="16" wrap vertical="center">
+                <Icon name="react" size="l" onBackground="brand-medium" tooltip="React" />
+                <Icon name="nextjs" size="l" onBackground="brand-medium" tooltip="Next.js" />
+                <Icon name="typescript" size="l" onBackground="brand-medium" tooltip="TypeScript" />
+                <Icon name="nodejs" size="l" onBackground="brand-medium" tooltip="Node.js" />
+              </Flex>
+            </RevealFx>
+          </Column>
+
+          {/* Right Column - Code Terminal */}
+          <RevealFx translateY="20" delay={0.8} fillWidth>
+            <CodeTerminal />
           </RevealFx>
-        </Column>
+        </Grid>
+      </Flex>
+
+      {/* Content Section */}
+      <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
+        {/* Projects Section */}
+        <RevealFx translateY="16" delay={1.0}>
+          <Projects range={[1, 1]} />
+        </RevealFx>
+
+        {/* Blog Section */}
+        {routes["/blog"] && (
+          <Flex fillWidth gap="24" mobileDirection="column">
+            <Flex flex={1} paddingLeft="l">
+              <Heading as="h2" variant="display-strong-xs" wrap="balance">
+                Latest from the blog
+              </Heading>
+            </Flex>
+            <Flex flex={3} paddingX="20">
+              <Posts range={[1, 2]} columns="2" />
+            </Flex>
+          </Flex>
+        )}
+
+        {/* More Projects */}
+        <Projects range={[2]} />
+
+        {/* Newsletter */}
+        {newsletter.display && <Mailchimp newsletter={newsletter} />}
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
-      </RevealFx>
-      {routes["/blog"] && (
-        <Flex fillWidth gap="24" mobileDirection="column">
-          <Flex flex={1} paddingLeft="l">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
-            </Heading>
-          </Flex>
-          <Flex flex={3} paddingX="20">
-            <Posts range={[1, 2]} columns="2" />
-          </Flex>
-        </Flex>
-      )}
-      <Projects range={[2]} />
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );
 }

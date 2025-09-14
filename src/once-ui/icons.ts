@@ -33,7 +33,8 @@ import {
   PiImageDuotone,
 } from "react-icons/pi";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaReact, FaNodeJs, FaAws } from "react-icons/fa6";
+import { SiTypescript, SiNextdotjs, SiPython, SiDocker } from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -67,4 +68,11 @@ export const iconLibrary: Record<string, IconType> = {
   x: FaXTwitter,
   clipboard: HiClipboard,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
+  react: FaReact,
+  nodejs: FaNodeJs,
+  aws: FaAws,
+  typescript: SiTypescript,
+  nextjs: SiNextdotjs,
+  python: SiPython,
+  docker: SiDocker,
 };
