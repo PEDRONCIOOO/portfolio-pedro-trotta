@@ -31,7 +31,7 @@ const CodeTerminal: React.FC = () => {
     "interface SeniorEngineer {",
     '  name: "Pedro Trotta";',
     '  role: "Senior Full-Stack Engineer";',
-    '  company: "Jungle Gaming";',
+    '  company: "Globoo";',
     '  location: "Campo Grande - MS";',
     '  experience: "6+ years";',
     "}",

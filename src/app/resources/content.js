@@ -55,11 +55,11 @@ const home = {
   headline: <>Building the future of scalable platforms.</>,
   subline: (
     <>
-      I'm <strong>Pedro Trotta</strong>, Senior Software Engineer at <InlineCode>Jungle Gaming</InlineCode>
+      I'm <strong>Pedro Trotta</strong>, Senior Software Engineer at <InlineCode>globoo.io</InlineCode>
       <br />
       With 6+ years of experience, architecting high-performance solutions
       <br />
-      for iGaming & enterprise platforms.
+      for BaaS & Exchange platforms.
     </>
   ),
   ctaText: "View Projects",
@@ -98,7 +98,7 @@ const about = {
     title: "Current Role",
     experiences: [
       {
-        company: "Jungle Gaming",
+        company: "Globoo.io",
         timeframe: "2025 - Present",
         role: "Senior Full-Stack Engineer",
         achievements: [
@@ -110,7 +110,7 @@ const about = {
           <>
             Built real-time applications using <InlineCode>Nest.js</InlineCode>, 
             <InlineCode>TypeScript</InlineCode>, and <InlineCode>WebSocket</InlineCode> APIs, 
-            serving 500K+ concurrent users with sub-10ms response times.
+            serving 100k+ concurrent users with sub-10ms response times.
           </>,
           <>
             Implemented CI/CD pipelines with <InlineCode>Azure Devops</InlineCode> and 
@@ -119,13 +119,13 @@ const about = {
         ],
         images: [
           {
-            src: "/images/projects/project-01/jungle-landing.png",
+            src: "/images/projects/project-01/appgloboo.png",
             alt: "App Globoo",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/jungle-landing2.png",
+            src: "/images/projects/project-01/appgloboo5.png",
             alt: "App Globoo",
             width: 16,
             height: 9,

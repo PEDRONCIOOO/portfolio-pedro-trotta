@@ -34,72 +34,86 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <Column fillWidth gap="m">
+    <Column
+      fillWidth
+      gap="s"
+      style={{
+        background: "var(--neutral-alpha-weak)",
+        borderRadius: "var(--radius-l)",
+        border: "1px solid var(--neutral-alpha-medium)",
+        overflow: "hidden",
+        transition: "all 0.2s ease",
+        cursor: "pointer"
+      }}
+    >
       {videos && videos.length > 0 ? (
         <VideoPlayer
           src={videos[0]}
           style={{
             width: "100%",
             aspectRatio: "16 / 9",
-            borderRadius: "var(--radius-m)",
             objectFit: "cover",
           }}
         />
       ) : (
         <Carousel
-          sizes="(max-width: 960px) 100vw, 960px"
+          sizes="(max-width: 960px) 100vw, 300px"
           images={images.map((image) => ({
             src: image,
             alt: title,
           }))}
+          style={{
+            aspectRatio: "16 / 9",
+          }}
         />
       )}
-      <Flex
-        mobileDirection="column"
-        fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
-      >
+
+      <Column gap="s" padding="l">
         {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
+          <Heading as="h3" wrap="balance" variant="heading-strong-s">
+            {title}
+          </Heading>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-s">Read case study</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
-          </Column>
+
+        {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="s" reverse />}
+
+        {description?.trim() && (
+          <Text
+            wrap="balance"
+            variant="body-default-xs"
+            onBackground="neutral-weak"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden"
+            }}
+          >
+            {description}
+          </Text>
         )}
-      </Flex>
+
+        <Flex gap="12" wrap marginTop="s">
+          {content?.trim() && (
+            <SmartLink
+              suffixIcon="arrowRight"
+              style={{ margin: "0", width: "fit-content" }}
+              href={href}
+            >
+              <Text variant="body-default-xs">Read case study</Text>
+            </SmartLink>
+          )}
+          {link && (
+            <SmartLink
+              suffixIcon="arrowUpRightFromSquare"
+              style={{ margin: "0", width: "fit-content" }}
+              href={link}
+            >
+              <Text variant="body-default-xs">View project</Text>
+            </SmartLink>
+          )}
+        </Flex>
+      </Column>
     </Column>
   );
 };

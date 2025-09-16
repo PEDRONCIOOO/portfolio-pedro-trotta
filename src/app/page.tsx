@@ -161,7 +161,35 @@ export default function Home() {
       <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">
         {/* Projects Section */}
         <RevealFx translateY="16" delay={1.0}>
-          <Projects range={[1, 1]} />
+          <Column fillWidth gap="xl" horizontal="center">
+            <Column gap="m" horizontal="center" paddingX="l">
+              <Heading
+                as="h2"
+                variant="display-strong-xl"
+                wrap="balance"
+                style={{ textAlign: "center" }}
+              >
+                Selected{" "}
+                <span style={{
+                  background: "linear-gradient(135deg, #00e5ff, #00acc1)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text"
+                }}>
+                  work
+                </span>
+              </Heading>
+              <Text
+                variant="body-default-l"
+                onBackground="neutral-weak"
+                wrap="balance"
+                style={{ textAlign: "center", maxWidth: "600px" }}
+              >
+                From e-commerce giants to crypto exchanges, each project represents a unique challenge conquered
+              </Text>
+            </Column>
+            <Projects />
+          </Column>
         </RevealFx>
 
         {/* Blog Section */}
@@ -177,9 +205,6 @@ export default function Home() {
             </Flex>
           </Flex>
         )}
-
-        {/* More Projects */}
-        <Projects range={[2]} />
 
         {/* Newsletter */}
         {newsletter.display && <Mailchimp newsletter={newsletter} />}
