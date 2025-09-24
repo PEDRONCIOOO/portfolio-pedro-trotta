@@ -76,7 +76,7 @@ const CodeTerminal: React.FC = () => {
     "",
     "export const pedroTrotta: SeniorEngineer = {",
     "  passionate: true,",
-    '  expertise: "iGaming & Enterprise Platforms",',
+    '  expertise: "Core Banking & Enterprise Softwares",',
     '  achievements: ["99.9% uptime", "500K+ users", "75% faster deployments"],',
     '  certifications: ["AWS Solutions Architect", "Professional Frontend Dev"]',
     "};"
