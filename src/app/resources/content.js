@@ -59,7 +59,7 @@ const home = {
       <br />
       With 6+ years of experience, architecting high-performance solutions
       <br />
-      for BaaS & Exchange platforms.
+      for BaaS & General Softwares.
     </>
   ),
   ctaText: "View Projects",
@@ -145,10 +145,10 @@ const about = {
     ),
     companies: [
       {
-        name: "Jungle Gaming",
-        logo: "/images/partners/jungle-gaming.svg",
-        link: "https://junglegaming.io",
-        description: "Architecting high-performance solutions for iGaming & enterprise platforms.",
+        name: "Casa do Credito",
+        logo: "/images/partners/casa-do-credito.png",
+        link: "https://casadocredito.com.br/",
+        description: "Architecting high-performance solutions for baas solutions including PIX globally.",
       },
       {
         name: "Globoo.io",
