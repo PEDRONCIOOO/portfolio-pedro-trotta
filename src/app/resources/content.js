@@ -55,7 +55,7 @@ const home = {
   headline: <>Building the future of scalable platforms.</>,
   subline: (
     <>
-      I'm <strong>Pedro Trotta</strong>, Senior Software Engineer at <InlineCode>globoo.io</InlineCode>
+      I'm <strong>Pedro Trotta</strong>, Senior Software Engineer at <InlineCode>Axia</InlineCode>
       <br />
       With 6+ years of experience, architecting high-performance solutions
       <br />
@@ -98,7 +98,7 @@ const about = {
     title: "Current Role",
     experiences: [
       {
-        company: "Globoo.io",
+        company: "Axia Digital Solutions",
         timeframe: "2025 - Present",
         role: "Senior Full-Stack Engineer",
         achievements: [
@@ -108,9 +108,9 @@ const about = {
             and reducing deployment time by 75%.
           </>,
           <>
-            Built real-time applications using <InlineCode>Nest.js</InlineCode>, 
+            Built real-time applications using <InlineCode>Express.js</InlineCode>, 
             <InlineCode>TypeScript</InlineCode>, and <InlineCode>WebSocket</InlineCode> APIs, 
-            serving 100k+ concurrent users with sub-10ms response times.
+            serving 500k+ concurrent users with sub-10ms response times.
           </>,
           <>
             Implemented CI/CD pipelines with <InlineCode>Azure Devops</InlineCode> and 
@@ -119,14 +119,14 @@ const about = {
         ],
         images: [
           {
-            src: "/images/projects/project-01/appgloboo.png",
-            alt: "App Globoo",
+            src: "/images/projects/project-01/axiadigital.png",
+            alt: "Axia Digital Solutions",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/appgloboo5.png",
-            alt: "App Globoo",
+            src: "/images/projects/project-01/axiadigital2.png",
+            alt: "Axia Digital Solutions",
             width: 16,
             height: 9,
           }
@@ -145,22 +145,22 @@ const about = {
     ),
     companies: [
       {
-        name: "Casa do Credito",
-        logo: "/images/partners/casa-do-credito.png",
-        link: "https://casadocredito.com.br/",
+        name: "Tokeniza",
+        logo: "/images/partners/tokeniza.png",
+        link: "https://tokeniza.com.br/",
         description: "Architecting high-performance solutions for baas solutions including PIX globally.",
       },
       {
         name: "Globoo.io",
         logo: "/images/partners/globoo-logo.png",
         link: "https://globoo.io",
-        description: "Digital banking & crypto exchange platform, where I lead software engineering initiatives."
+        description: "Digital banking & crypto exchange platform"
       },
       {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
         link: "https://axiadigitalsolutions.com/",
-        description: "Digital solutions, cybersecurity, and blockchain development."
+        description: "Digital solutions, cybersecurity, and blockchain development where I lead software engineering initiatives."
       },
       {
         name: "AsaaS",
