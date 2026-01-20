@@ -1,0 +1,58 @@
+.card {
+  position: relative;
+  border-radius: var(--radius-l);
+  background: var(--surface-background);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-l);
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      transparent 40%,
+      var(--glow-color) 50%,
+      transparent 60%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 0.6;
+  }
+}
+
+.glowEffect {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--glow-color) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  opacity: var(--glow-opacity);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  filter: blur(30px);
+  mix-blend-mode: screen;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  background: var(--surface-background);
+  border-radius: var(--radius-l);
+}
