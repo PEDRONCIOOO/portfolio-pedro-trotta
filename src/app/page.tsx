@@ -3,6 +3,7 @@ import React from "react";
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Grid, Icon } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 import { CodeTerminal } from "@/components/CodeTerminal";
+import { PartnerCard } from "@/components/PartnerCard";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
@@ -156,6 +157,48 @@ export default function Home() {
           </RevealFx>
         </Grid>
       </Flex>
+
+      {/* Partners & Affiliates Section */}
+      {about.partners?.display && about.partners.companies.length > 0 && (
+        <Column fillWidth maxWidth="xl" paddingY="xl" paddingX="l" gap="l">
+          <RevealFx translateY="8">
+            <Column gap="m" horizontal="center">
+              <Heading as="h2" variant="display-strong-l" wrap="balance" style={{ textAlign: "center" }}>
+                {about.partners.title}
+              </Heading>
+              <Text
+                variant="body-default-l"
+                onBackground="neutral-weak"
+                wrap="balance"
+                style={{ textAlign: "center", maxWidth: "700px" }}
+              >
+                {about.partners.description}
+              </Text>
+            </Column>
+          </RevealFx>
+
+          <RevealFx translateY="12" delay={0.2}>
+            <Grid
+              columns="3"
+              tabletColumns="2"
+              mobileColumns="1"
+              gap="m"
+              fillWidth
+            >
+              {about.partners.companies.map((company, index) => (
+                <PartnerCard
+                  key={`${company.name}-${index}`}
+                  name={company.name}
+                  logo={company.logo}
+                  link={company.link}
+                  description={company.description}
+                  glowColor={company.glowColor}
+                />
+              ))}
+            </Grid>
+          </RevealFx>
+        </Column>
+      )}
 
       {/* Content Section */}
       <Column maxWidth="xl" gap="xl" horizontal="center" paddingY="xl">

@@ -3,7 +3,6 @@ import {
   Button,
   Column,
   Flex,
-  Grid,
   Heading,
   Icon,
   IconButton,
@@ -341,68 +340,6 @@ export default function About() {
             </>
           )}
 
-          {/* Seção Parceiros & Afiliados - Layout melhorado */}
-          {about.partners?.display && about.partners.companies.length > 0 && (
-            <>
-              <Heading
-                as="h2"
-                id={about.partners.title}
-                variant="display-strong-s"
-                marginBottom="m"
-                marginTop="40"
-              >
-                {about.partners.title}
-              </Heading>
-              <Text variant="body-default-m" marginBottom="m" onBackground="neutral-weak">
-                {about.partners.description}
-              </Text>
-              <Grid 
-                columns={2} 
-                tabletColumns={3}
-                mobileColumns={2}
-                gap="m" 
-                fillWidth 
-                marginBottom="40"
-              >
-                {about.partners.companies.map((company, index) => (
-                  <Column
-                    key={`${company.name}-${index}`}
-                    padding="m"
-                    radius="m"
-                    border="neutral-medium"
-                    borderStyle="solid"
-                    background="surface"
-                    fillWidth
-                    gap="s"
-                  >
-                    <Flex fillWidth horizontal="space-between" vertical="center">
-                      <SmartImage
-                        src={company.logo}
-                        alt={company.name}
-                        width={6}
-                        height={6}
-                        radius="s"
-                        objectFit="contain"
-                      />
-                      <IconButton
-                        href={company.link}
-                        icon="arrowUpRight"
-                        variant="tertiary"
-                        size="s"
-                      />
-                    </Flex>
-                    <Text 
-                      variant="body-default-s" 
-                      onBackground="neutral-weak"
-                      style={{ lineHeight: "1.4" }}
-                    >
-                      {company.description}
-                    </Text>
-                  </Column>
-                ))}
-              </Grid>
-            </>
-          )}
         </Column>
       </Flex>
     </Column>

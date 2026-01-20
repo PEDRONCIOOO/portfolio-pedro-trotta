@@ -148,37 +148,43 @@ const about = {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
         link: "https://axiadigitalsolutions.com/",
-        description: "Digital solutions, cybersecurity, and blockchain development where I lead software engineering initiatives."
+        description: "Digital solutions, cybersecurity, and blockchain development where I lead software engineering initiatives.",
+        glowColor: "#00d4ff"
       },
       {
         name: "CVM",
         logo: "/images/partners/cvm.png",
         link: "https://www.gov.br/cvm/pt-br",
-        description: "The Securities and Exchange Commission of Brazil is the securities market authority in Brazil. It regulates the capital markets in Brazil and all of its participants."
+        description: "The Securities and Exchange Commission of Brazil is the securities market authority in Brazil. It regulates the capital markets in Brazil and all of its participants.",
+        glowColor: "#4ade80"
       },
       {
         name: "Tokeniza",
         logo: "/images/partners/tokeniza.png",
         link: "https://tokeniza.com.br/",
         description: "Architecting high-performance solutions for baas solutions including PIX globally.",
+        glowColor: "#ffffff"
       },
       {
         name: "AsaaS",
         logo: "/images/partners/asaas-logo.webp",
         link: "https://asaas.com/",
-        description: "Digital banking & financial software services"
+        description: "Digital banking & financial software services",
+        glowColor: "#0432ff"
       },
       {
         name: "Brasil Bitcoin",
         logo: "/images/partners/brasil-bitcoin.svg",
         link: "https://brasilbitcoin.com.br/",
-        description: "Exchange platform for cryptocurrencies and digital assets."
+        description: "Exchange platform for cryptocurrencies and digital assets.",
+        glowColor: "#0babf5"
       },
       {
         name: "Bybit",
         logo: "/images/partners/bybit.png",
         link: "https://bybit.com/",
-        description: "Cryptocurrency exchange platform."
+        description: "Cryptocurrency exchange platform.",
+        glowColor: "#fbbf24"
       },
     ],
   },
