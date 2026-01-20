@@ -145,22 +145,22 @@ const about = {
     ),
     companies: [
       {
-        name: "Tokeniza",
-        logo: "/images/partners/tokeniza.png",
-        link: "https://tokeniza.com.br/",
-        description: "Architecting high-performance solutions for baas solutions including PIX globally.",
-      },
-      {
-        name: "Globoo.io",
-        logo: "/images/partners/globoo-logo.png",
-        link: "https://globoo.io",
-        description: "Digital banking & crypto exchange platform"
-      },
-      {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
         link: "https://axiadigitalsolutions.com/",
         description: "Digital solutions, cybersecurity, and blockchain development where I lead software engineering initiatives."
+      },
+      {
+        name: "CVM",
+        logo: "/images/partners/cvm.png",
+        link: "https://www.gov.br/cvm/pt-br",
+        description: "The Securities and Exchange Commission of Brazil is the securities market authority in Brazil. It regulates the capital markets in Brazil and all of its participants."
+      },
+      {
+        name: "Tokeniza",
+        logo: "/images/partners/tokeniza.png",
+        link: "https://tokeniza.com.br/",
+        description: "Architecting high-performance solutions for baas solutions including PIX globally.",
       },
       {
         name: "AsaaS",

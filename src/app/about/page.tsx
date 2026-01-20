@@ -83,7 +83,7 @@ export default function About() {
             url: `https://${baseURL}/about`,
             image: `${baseURL}/images/${person.avatar}`,
             sameAs: social
-              .filter((item) => item.link && !item.link.startsWith("mailto:faq@trotta.dev")) 
+              .filter((item) => item.link && !item.link.startsWith("mailto:pedro.forte@axiadigitalsolutions.com")) 
               .map((item) => item.link),
             worksFor: {
               "@type": "Organization",
