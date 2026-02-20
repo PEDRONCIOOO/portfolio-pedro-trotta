@@ -26,7 +26,7 @@ const CodeTerminal: React.FC = () => {
   };
 
   const fullCode = [
-    "// Pedro Trotta - Senior Software Engineer Profile",
+    "// Pedro Trotta - Software Fullstack Engineer Profile",
     "",
     "interface SoftwareEngineer {",
     '  name: "Pedro Trotta";',
