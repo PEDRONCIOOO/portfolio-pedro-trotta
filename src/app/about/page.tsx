@@ -117,7 +117,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Flex gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              {person.locationDisplay || person.location}
             </Flex>
             {person.languages.length > 0 && (
               <Flex wrap gap="8">
@@ -199,6 +199,25 @@ export default function About() {
                         </>
                     ),
                 )}
+                <Button
+                    className="s-flex-hide"
+                    href="/cv/cv-trotta.pdf"
+                    prefixIcon="arrowUpRightFromSquare"
+                    label="Download CV"
+                    size="s"
+                    variant="secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                />
+                <IconButton
+                    className="s-flex-show"
+                    size="l"
+                    href="/cv/cv-trotta.pdf"
+                    icon="arrowUpRightFromSquare"
+                    variant="secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                />
               </Flex>
             )}
           </Column>

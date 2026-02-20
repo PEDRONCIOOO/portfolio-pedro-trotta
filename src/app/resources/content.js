@@ -9,6 +9,7 @@ const person = {
   role: "Software Engineer",
   avatar: "/images/pedro.jpeg",
   location: "America/Campo_Grande", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  locationDisplay: "Brasil",
   languages: ["English", "Portuguese"],
 };
 
@@ -55,9 +56,9 @@ const home = {
   headline: <>Building the future of scalable platforms.</>,
   subline: (
     <>
-      I'm <strong>Pedro Trotta</strong>, Senior Software Engineer at <InlineCode>Axia</InlineCode>
+      I'm <strong>Pedro Trotta</strong>, a Software Engineer
       <br />
-      With 6+ years of experience, architecting high-performance solutions
+      With 5+ years of experience, architecting high-performance solutions
       <br />
       for BaaS & General Softwares.
     </>
