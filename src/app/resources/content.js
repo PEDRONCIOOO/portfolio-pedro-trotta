@@ -35,12 +35,12 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/pedro-forte-853b17323/",
+    link: "https://www.linkedin.com/in/pedro-trotta-853b17323/",
   },
   {
     name: "X",
     icon: "x",
-    link: "",
+    link: "https://x.com/pedronkiooo",
   },
   {
     name: "Email",
