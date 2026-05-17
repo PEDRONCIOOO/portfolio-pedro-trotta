@@ -1,0 +1,70 @@
+---
+title: "TicoAI"
+publishedAt: "2026-05-16"
+summary: "Your buddy AI that follows your cursor, see's your screen, listen to your voice and guides you!"
+videos:
+  - "/videos/tico-ai-video.mp4"
+team:
+  - name: "Pedro Trotta"
+    role: "Software Engineer"
+    avatar: "/images/pedro.jpeg"
+    linkedIn: "https://www.linkedin.com/in/pedro-trotta-853b17323/"
+link: "https://ticoai.app"
+---
+
+## Overview
+
+Tico is a Windows desktop AI buddy that lives on the user's screen — a companion cursor that follows you around, listens to voice input, sees the screen via screenshots, and answers out loud while pointing at on-screen elements. Built for fluid multimodal interaction, it auto-detects language (PT-BR / EN), searches the web when needed, and runs natively on Windows with a custom WPF interface.
+
+The core value proposition: turn the desktop into a conversational workspace — ask Tico anything hands-free, and it sees, hears, and responds in real time.
+
+[Website](https://ticoai.app)
+
+## Platform Modules
+
+### Buddy Cursor
+Desktop companion built in WPF with spring physics, Bézier path animation, waveform visualization, and speech bubbles. Persistent on the taskbar with a custom Tico tray icon, bindable hotkey (default F8), and pause/resume TTS controls — without hiding the Windows taskbar.
+
+### Voice & Speech
+End-to-end voice loop: audio capture with RMS gating, transcription via OpenAI Whisper (auto language detection), and spoken responses via OpenAI TTS with playback pause/resume.
+
+### Screen Awareness
+Real-time screenshot capture and on-screen element parsing via OmniParser, plus a pointing system (v1 + v2) that lets Tico visually highlight UI elements while speaking about them.
+
+### AI Engine
+Anthropic Claude integration with built-in web search (`web_search_20250305`, up to 3 searches per request), conversation history management, and multi-turn context streaming over SSE.
+
+### Web Platform
+Next.js 16 marketing site with landing page, auth flow, dashboard, updates blog (markdown-based with likes and comments), legal pages, and dual-language i18n (~160 keys in PT-BR and EN). SSR via Supabase with Tailwind 4 styling.
+
+### Billing & Payments
+Dual payment infrastructure: PIX via AbacatePay (BRL) and credit card via Stripe (USD). Three tiers (free / pro / unlimited) with usage tracking, idempotent webhooks, and Stripe Customer Portal for subscription management.
+
+### Auth & Identity
+Supabase Auth with email verification, password reset, magic links, and JWT-based authorization on the proxy. Custom HTML email templates delivered via Resend SMTP.
+
+### Update System
+Auto-update checker on startup, with installer artifacts and `version.json` served from Cloudflare R2.
+
+## Tech Stack
+
+**Desktop**: C# .NET 8 (WPF), DPAPI for token storage
+**Backend / Proxy**: Cloudflare Workers (prod), Node.js (dev)
+**Frontend**: Next.js 16, React, Tailwind 4, TypeScript
+**Auth & Database**: Supabase (PostgreSQL, RLS, RPCs)
+**AI**: Anthropic Claude API (+ Web Search), OpenAI (Whisper + TTS)
+**Payments**: AbacatePay (PIX / BRL), Stripe (Card / USD)
+**Email**: Resend (custom SMTP)
+**Storage / CDN**: Cloudflare R2, Cloudflare DNS
+**Infrastructure**: Vercel, Cloudflare Workers, Supabase Pro
+**Testing**: xUnit, NSubstitute
+
+## What I Worked On
+
+- Built the entire WPF desktop app from scratch — state machine (CompanionManager), services layer (auth, audio capture, screen capture, pointing, hotkey, updates), and custom UI (buddy cursor with spring physics, overlay, settings, chat history with pause TTS)
+- Designed and shipped the Cloudflare Worker proxy with JWT validation, per-tier usage enforcement, SSE streaming from Claude, and routes for /chat, /transcribe, /tts, /usage
+- Built the full Next.js marketing site: landing page, login/register with email verification, dashboard, updates blog with likes and comments, legal pages, and full PT-BR / EN i18n
+- Implemented dual payment system — PIX via AbacatePay (webhook v1 + v2) and credit card via Stripe (4-event webhook handling), all idempotent via a webhook_events table
+- Designed the Supabase schema (profiles, usage, payments, feedback, webhook_events, post_likes, post_comments) with RLS policies and check_usage / increment_usage RPCs
+- Set up the custom transactional email pipeline via Resend SMTP with 6 personalized HTML templates (confirm signup, reset password, magic link, change email, invite, reauthentication)
+- Wrote 56 unit tests covering core domain logic, services, and integration boundaries (xUnit + NSubstitute)
