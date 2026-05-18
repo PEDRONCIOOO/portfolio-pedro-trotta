@@ -58,9 +58,9 @@ const home = {
     <>
       I'm <strong>Pedro Trotta</strong>, a Software Engineer
       <br />
-      With 5+ years of experience, architecting high-performance solutions
+      With 6+ years of experience, architecting high-performance solutions
       <br />
-      for BaaS & General Softwares.
+      for BaaS, SaaS & General Softwares.
     </>
   ),
   ctaText: "View Projects",
