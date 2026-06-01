@@ -7,6 +7,8 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import { LocaleContent } from "@/components/LocaleContent";
+import { T } from "@/components/T";
 
 interface WorkParams {
   params: {
@@ -76,6 +78,14 @@ export default function Project({ params }: WorkParams) {
     notFound();
   }
 
+  let ptPost: ReturnType<typeof getPosts>[number] | undefined;
+  try {
+    const ptPosts = getPosts(["src", "app", "work", "projects", "pt"]);
+    ptPost = ptPosts.find((p) => p.slug === params.slug);
+  } catch {
+    ptPost = undefined;
+  }
+
   const avatars =
     post.metadata.team?.map((person) => ({
       src: person.avatar,
@@ -109,7 +119,9 @@ export default function Project({ params }: WorkParams) {
         <Button href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
-        <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        <Heading variant="display-strong-s">
+          <T en={post.metadata.title} pt={ptPost?.metadata.title || post.metadata.title} />
+        </Heading>
       </Column>
       {post.metadata.videos && post.metadata.videos.length > 0 ? (
         <VideoPlayer
@@ -137,7 +149,14 @@ export default function Project({ params }: WorkParams) {
             {formatDate(post.metadata.publishedAt)}
           </Text>
         </Flex>
-        <CustomMDX source={post.content} />
+        <LocaleContent locale="en">
+          <CustomMDX source={post.content} />
+        </LocaleContent>
+        {ptPost && (
+          <LocaleContent locale="pt">
+            <CustomMDX source={ptPost.content} />
+          </LocaleContent>
+        )}
       </Column>
       <ScrollToHash />
     </Column>

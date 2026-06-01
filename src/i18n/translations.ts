@@ -84,6 +84,8 @@ const translations = {
     // Footer / General
     "general.location": "Brasil",
     "general.role": "Software Engineer",
+    "project.readCaseStudy": "Read case study",
+    "project.viewProject": "View project",
   },
   pt: {
     // Navigation
@@ -170,6 +172,8 @@ const translations = {
     // Footer / General
     "general.location": "Brasil",
     "general.role": "Engenheiro de Software",
+    "project.readCaseStudy": "Ler estudo de caso",
+    "project.viewProject": "Ver projeto",
   },
 } as const;
 

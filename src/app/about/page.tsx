@@ -15,6 +15,8 @@ import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import { person, about, social } from "@/app/resources/content";
+import { person as personPt, about as aboutPt, social as socialPt } from "@/app/resources/content-pt";
+import { LocaleContent } from "@/components/LocaleContent";
 
 export async function generateMetadata() {
   const title = about.title;
@@ -158,7 +160,7 @@ export default function About() {
                 vertical="center"
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Flex paddingX="8">Schedule a call</Flex>
+                <Flex paddingX="8"><T en="Schedule a call" pt="Agendar uma chamada" /></Flex>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -175,7 +177,7 @@ export default function About() {
               variant="display-default-xs"
               onBackground="neutral-weak"
             >
-              {person.role}
+              <T en={person.role} pt={personPt.role} />
             </Text>
             {social.length > 0 && (
               <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth>
@@ -203,16 +205,30 @@ export default function About() {
                         </>
                     ),
                 )}
-                <Button
-                    className="s-flex-hide"
-                    href="/cv/cv-trotta.pdf"
-                    prefixIcon="arrowUpRightFromSquare"
-                    label="Download CV"
-                    size="s"
-                    variant="secondary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                />
+                <LocaleContent locale="en">
+                  <Button
+                      className="s-flex-hide"
+                      href="/cv/cv-trotta.pdf"
+                      prefixIcon="arrowUpRightFromSquare"
+                      label="Download CV"
+                      size="s"
+                      variant="secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  />
+                </LocaleContent>
+                <LocaleContent locale="pt">
+                  <Button
+                      className="s-flex-hide"
+                      href="/cv/cv-trotta.pdf"
+                      prefixIcon="arrowUpRightFromSquare"
+                      label="Baixar CV"
+                      size="s"
+                      variant="secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  />
+                </LocaleContent>
                 <IconButton
                     className="s-flex-show"
                     size="l"
@@ -228,7 +244,12 @@ export default function About() {
 
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              <T k="about.intro.description" />
+              <LocaleContent locale="en">
+                {about.intro.description}
+              </LocaleContent>
+              <LocaleContent locale="pt">
+                {aboutPt.intro.description}
+              </LocaleContent>
             </Column>
           )}
 
@@ -238,58 +259,114 @@ export default function About() {
                 <T k="about.work.title" />
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Flex>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map((achievement: JSX.Element, index: number) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={`${experience.company}-${index}`}
-                        >
-                          {achievement}
+                <LocaleContent locale="en">
+                  {about.work.experiences.map((experience, index) => (
+                    <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
+                      <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                        <Text id={experience.company} variant="heading-strong-l">
+                          {experience.company}
                         </Text>
-                      ))}
-                    </Column>
-                    {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" gap="16" wrap>
-                        {experience.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {experience.timeframe}
+                        </Text>
+                      </Flex>
+                      <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                        {experience.role}
+                      </Text>
+                      <Column as="ul" gap="16">
+                        {experience.achievements.map((achievement: JSX.Element, index: number) => (
+                          <Text
+                            as="li"
+                            variant="body-default-m"
+                            key={`${experience.company}-${index}`}
                           >
-                            <SmartImage
-                              enlarge
+                            {achievement}
+                          </Text>
+                        ))}
+                      </Column>
+                      {experience.images.length > 0 && (
+                        <Flex fillWidth paddingTop="m" paddingLeft="40" gap="16" wrap>
+                          {experience.images.map((image, index) => (
+                            <Flex
+                              key={index}
+                              border="neutral-medium"
                               radius="m"
                               //@ts-ignore
-                              sizes={image.width.toString()}
+                              minWidth={image.width}
                               //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
+                              height={image.height}
+                            >
+                              <SmartImage
+                                enlarge
+                                radius="m"
+                                //@ts-ignore
+                                sizes={image.width.toString()}
+                                //@ts-ignore
+                                alt={image.alt}
+                                //@ts-ignore
+                                src={image.src}
+                              />
+                            </Flex>
+                          ))}
+                        </Flex>
+                      )}
+                    </Column>
+                  ))}
+                </LocaleContent>
+                <LocaleContent locale="pt">
+                  {aboutPt.work.experiences.map((experience, index) => (
+                    <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
+                      <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                        <Text id={experience.company} variant="heading-strong-l">
+                          {experience.company}
+                        </Text>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {experience.timeframe}
+                        </Text>
                       </Flex>
-                    )}
-                  </Column>
-                ))}
+                      <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                        {experience.role}
+                      </Text>
+                      <Column as="ul" gap="16">
+                        {experience.achievements.map((achievement: JSX.Element, index: number) => (
+                          <Text
+                            as="li"
+                            variant="body-default-m"
+                            key={`${experience.company}-${index}`}
+                          >
+                            {achievement}
+                          </Text>
+                        ))}
+                      </Column>
+                      {experience.images.length > 0 && (
+                        <Flex fillWidth paddingTop="m" paddingLeft="40" gap="16" wrap>
+                          {experience.images.map((image, index) => (
+                            <Flex
+                              key={index}
+                              border="neutral-medium"
+                              radius="m"
+                              //@ts-ignore
+                              minWidth={image.width}
+                              //@ts-ignore
+                              height={image.height}
+                            >
+                              <SmartImage
+                                enlarge
+                                radius="m"
+                                //@ts-ignore
+                                sizes={image.width.toString()}
+                                //@ts-ignore
+                                alt={image.alt}
+                                //@ts-ignore
+                                src={image.src}
+                              />
+                            </Flex>
+                          ))}
+                        </Flex>
+                      )}
+                    </Column>
+                  ))}
+                </LocaleContent>
               </Column>
             </>
           )}
@@ -300,16 +377,30 @@ export default function About() {
                 <T k="about.studies.title" />
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
-                ))}
+                <LocaleContent locale="en">
+                  {about.studies.institutions.map((institution, index) => (
+                    <Column key={`${institution.name}-${index}`} fillWidth gap="4">
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        {institution.description}
+                      </Text>
+                    </Column>
+                  ))}
+                </LocaleContent>
+                <LocaleContent locale="pt">
+                  {aboutPt.studies.institutions.map((institution, index) => (
+                    <Column key={`${institution.name}-${index}`} fillWidth gap="4">
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        {institution.description}
+                      </Text>
+                    </Column>
+                  ))}
+                </LocaleContent>
               </Column>
             </>
           )}
@@ -325,40 +416,78 @@ export default function About() {
                 <T k="about.technical.title" />
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text variant="heading-strong-l">{skill.title}</Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.images && skill.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
-                          >
-                            <SmartImage
-                              enlarge
+                <LocaleContent locale="en">
+                  {about.technical.skills.map((skill, index) => (
+                    <Column key={`${skill}-${index}`} fillWidth gap="4">
+                      <Text variant="heading-strong-l">{skill.title}</Text>
+                      <Text variant="body-default-m" onBackground="neutral-weak">
+                        {skill.description}
+                      </Text>
+                      {skill.images && skill.images.length > 0 && (
+                        <Flex fillWidth paddingTop="m" gap="12" wrap>
+                          {skill.images.map((image, index) => (
+                            <Flex
+                              key={index}
+                              border="neutral-medium"
                               radius="m"
                               //@ts-ignore
-                              sizes={image.width.toString()}
+                              minWidth={image.width}
                               //@ts-ignore
-                              alt={image.alt}
+                              height={image.height}
+                            >
+                              <SmartImage
+                                enlarge
+                                radius="m"
+                                //@ts-ignore
+                                sizes={image.width.toString()}
+                                //@ts-ignore
+                                alt={image.alt}
+                                //@ts-ignore
+                                src={image.src}
+                              />
+                            </Flex>
+                          ))}
+                        </Flex>
+                      )}
+                    </Column>
+                  ))}
+                </LocaleContent>
+                <LocaleContent locale="pt">
+                  {aboutPt.technical.skills.map((skill, index) => (
+                    <Column key={`${skill}-${index}`} fillWidth gap="4">
+                      <Text variant="heading-strong-l">{skill.title}</Text>
+                      <Text variant="body-default-m" onBackground="neutral-weak">
+                        {skill.description}
+                      </Text>
+                      {skill.images && skill.images.length > 0 && (
+                        <Flex fillWidth paddingTop="m" gap="12" wrap>
+                          {skill.images.map((image, index) => (
+                            <Flex
+                              key={index}
+                              border="neutral-medium"
+                              radius="m"
                               //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
-                  </Column>
-                ))}
+                              minWidth={image.width}
+                              //@ts-ignore
+                              height={image.height}
+                            >
+                              <SmartImage
+                                enlarge
+                                radius="m"
+                                //@ts-ignore
+                                sizes={image.width.toString()}
+                                //@ts-ignore
+                                alt={image.alt}
+                                //@ts-ignore
+                                src={image.src}
+                              />
+                            </Flex>
+                          ))}
+                        </Flex>
+                      )}
+                    </Column>
+                  ))}
+                </LocaleContent>
               </Column>
             </>
           )}

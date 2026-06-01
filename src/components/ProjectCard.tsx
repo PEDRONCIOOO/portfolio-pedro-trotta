@@ -10,6 +10,8 @@ import {
   Text,
 } from "@/once-ui/components";
 import { VideoPlayer } from "./VideoPlayer";
+import { useLocale } from "@/i18n/LocaleContext";
+import { translations } from "@/i18n/translations";
 
 interface ProjectCardProps {
   href: string;
@@ -33,6 +35,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
 }) => {
+  const { locale } = useLocale();
+  const t = translations[locale];
   return (
     <Column
       fillWidth
@@ -100,7 +104,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               style={{ margin: "0", width: "fit-content" }}
               href={href}
             >
-              <Text variant="body-default-xs">Read case study</Text>
+              <Text variant="body-default-xs">{t["project.readCaseStudy"]}</Text>
             </SmartLink>
           )}
           {link && (
@@ -109,7 +113,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               style={{ margin: "0", width: "fit-content" }}
               href={link}
             >
-              <Text variant="body-default-xs">View project</Text>
+              <Text variant="body-default-xs">{t["project.viewProject"]}</Text>
             </SmartLink>
           )}
         </Flex>

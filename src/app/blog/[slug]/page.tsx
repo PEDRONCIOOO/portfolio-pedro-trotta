@@ -6,6 +6,8 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import { LocaleContent } from "@/components/LocaleContent";
+import { T } from "@/components/T";
 
 interface BlogParams {
   params: {
@@ -71,6 +73,14 @@ export default function Blog({ params }: BlogParams) {
     notFound();
   }
 
+  let ptPost: ReturnType<typeof getPosts>[number] | undefined;
+  try {
+    const ptPosts = getPosts(["src", "app", "blog", "posts", "pt"]);
+    ptPost = ptPosts.find((p) => p.slug === params.slug);
+  } catch {
+    ptPost = undefined;
+  }
+
   const avatars =
     post.metadata.team?.map((person) => ({
       src: person.avatar,
@@ -103,7 +113,9 @@ export default function Blog({ params }: BlogParams) {
       <Button href="/blog" weight="default" variant="tertiary" size="s" prefixIcon="chevronLeft">
         Posts
       </Button>
-      <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+      <Heading variant="display-strong-s">
+        <T en={post.metadata.title} pt={ptPost?.metadata.title || post.metadata.title} />
+      </Heading>
       <Row gap="12" vertical="center">
         {avatars.length > 0 && <AvatarGroup size="s" avatars={avatars} />}
         <Text variant="body-default-s" onBackground="neutral-weak">
@@ -111,7 +123,14 @@ export default function Blog({ params }: BlogParams) {
         </Text>
       </Row>
       <Column as="article" fillWidth>
-        <CustomMDX source={post.content} />
+        <LocaleContent locale="en">
+          <CustomMDX source={post.content} />
+        </LocaleContent>
+        {ptPost && (
+          <LocaleContent locale="pt">
+            <CustomMDX source={ptPost.content} />
+          </LocaleContent>
+        )}
       </Column>
       <ScrollToHash />
     </Column>

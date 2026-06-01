@@ -1,0 +1,70 @@
+---
+title: "TicoAI"
+publishedAt: "2026-05-16"
+summary: "Seu companheiro de IA que segue seu cursor, ve sua tela, ouve sua voz e te guia!"
+videos:
+  - "/videos/tico-ai-video.mp4"
+team:
+  - name: "Pedro Trotta"
+    role: "Software Engineer"
+    avatar: "/images/pedro.jpeg"
+    linkedIn: "https://www.linkedin.com/in/pedro-trotta-853b17323/"
+link: "https://ticoai.app"
+---
+
+## Visao Geral
+
+Tico e um companheiro de IA para desktop Windows que vive na tela do usuario — um cursor companheiro que te segue, ouve comandos de voz, ve a tela atraves de capturas de tela e responde em voz alta enquanto aponta para elementos na tela. Construido para interacao multimodal fluida, ele detecta automaticamente o idioma (PT-BR / EN), pesquisa na web quando necessario e roda nativamente no Windows com uma interface WPF customizada.
+
+A proposta de valor principal: transformar o desktop em um espaco de trabalho conversacional — pergunte qualquer coisa ao Tico com as maos livres, e ele ve, ouve e responde em tempo real.
+
+[Website](https://ticoai.app)
+
+## Modulos da Plataforma
+
+### Cursor Companheiro
+Companheiro de desktop construido em WPF com fisica de molas, animacao de caminho Bezier, visualizacao de forma de onda e baloes de fala. Persistente na barra de tarefas com um icone personalizado do Tico na bandeja, tecla de atalho configuravel (padrao F8) e controles de pausar/retomar TTS — sem esconder a barra de tarefas do Windows.
+
+### Voz e Fala
+Loop de voz completo: captura de audio com gating RMS, transcricao via OpenAI Whisper (deteccao automatica de idioma) e respostas faladas via OpenAI TTS com pausar/retomar reproducao.
+
+### Consciencia de Tela
+Captura de tela em tempo real e analise de elementos na tela via OmniParser, alem de um sistema de apontamento (v1 + v2) que permite ao Tico destacar visualmente elementos da UI enquanto fala sobre eles.
+
+### Motor de IA
+Integracao com Anthropic Claude com busca web integrada (`web_search_20250305`, ate 3 buscas por requisicao), gerenciamento de historico de conversas e streaming de contexto multi-turno via SSE.
+
+### Plataforma Web
+Site de marketing em Next.js 16 com landing page, fluxo de autenticacao, dashboard, blog de atualizacoes (baseado em markdown com curtidas e comentarios), paginas legais e i18n em dois idiomas (~160 chaves em PT-BR e EN). SSR via Supabase com estilizacao Tailwind 4.
+
+### Pagamentos e Cobrancas
+Infraestrutura de pagamento dupla: PIX via AbacatePay (BRL) e cartao de credito via Stripe (USD). Tres planos (gratuito / pro / ilimitado) com rastreamento de uso, webhooks idempotentes e Stripe Customer Portal para gestao de assinaturas.
+
+### Autenticacao e Identidade
+Supabase Auth com verificacao de email, recuperacao de senha, magic links e autorizacao baseada em JWT no proxy. Templates de email HTML customizados entregues via Resend SMTP.
+
+### Sistema de Atualizacao
+Verificador de atualizacoes automatico na inicializacao, com artefatos de instalador e `version.json` servidos pelo Cloudflare R2.
+
+## Stack Tecnologico
+
+**Desktop**: C# .NET 8 (WPF), DPAPI para armazenamento de tokens
+**Backend / Proxy**: Cloudflare Workers (prod), Node.js (dev)
+**Frontend**: Next.js 16, React, Tailwind 4, TypeScript
+**Auth e Banco de Dados**: Supabase (PostgreSQL, RLS, RPCs)
+**IA**: Anthropic Claude API (+ Web Search), OpenAI (Whisper + TTS)
+**Pagamentos**: AbacatePay (PIX / BRL), Stripe (Cartao / USD)
+**Email**: Resend (SMTP customizado)
+**Armazenamento / CDN**: Cloudflare R2, Cloudflare DNS
+**Infraestrutura**: Vercel, Cloudflare Workers, Supabase Pro
+**Testes**: xUnit, NSubstitute
+
+## No Que Trabalhei
+
+- Construi todo o app desktop WPF do zero — maquina de estados (CompanionManager), camada de servicos (auth, captura de audio, captura de tela, apontamento, hotkey, atualizacoes) e UI customizada (cursor companheiro com fisica de molas, overlay, configuracoes, historico de chat com pausar TTS)
+- Projetei e lancei o proxy em Cloudflare Worker com validacao JWT, controle de uso por plano, streaming SSE do Claude e rotas para /chat, /transcribe, /tts, /usage
+- Construi o site de marketing completo em Next.js: landing page, login/registro com verificacao de email, dashboard, blog de atualizacoes com curtidas e comentarios, paginas legais e i18n completo PT-BR / EN
+- Implementei sistema de pagamento duplo — PIX via AbacatePay (webhook v1 + v2) e cartao de credito via Stripe (tratamento de 4 eventos de webhook), todos idempotentes via tabela webhook_events
+- Projetei o schema do Supabase (profiles, usage, payments, feedback, webhook_events, post_likes, post_comments) com politicas RLS e RPCs check_usage / increment_usage
+- Configurei o pipeline de email transacional customizado via Resend SMTP com 6 templates HTML personalizados (confirmar cadastro, resetar senha, magic link, trocar email, convite, reautenticacao)
+- Escrevi 56 testes unitarios cobrindo logica de dominio central, servicos e limites de integracao (xUnit + NSubstitute)

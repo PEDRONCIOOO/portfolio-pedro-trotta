@@ -7,9 +7,11 @@ import { PartnerCard } from "@/components/PartnerCard";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
+import { about as aboutPt } from "@/app/resources/content-pt";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 import { T } from "@/components/T";
+import { LocaleContent } from "@/components/LocaleContent";
 
 export async function generateMetadata() {
   const title = home.title;
@@ -185,24 +187,46 @@ export default function Home() {
           </RevealFx>
 
           <RevealFx translateY="12" delay={0.2}>
-            <Grid
-              columns="3"
-              tabletColumns="2"
-              mobileColumns="1"
-              gap="m"
-              fillWidth
-            >
-              {about.partners.companies.map((company, index) => (
-                <PartnerCard
-                  key={`${company.name}-${index}`}
-                  name={company.name}
-                  logo={company.logo}
-                  link={company.link}
-                  description={company.description}
-                  glowColor={company.glowColor}
-                />
-              ))}
-            </Grid>
+            <LocaleContent locale="en">
+              <Grid
+                columns="3"
+                tabletColumns="2"
+                mobileColumns="1"
+                gap="m"
+                fillWidth
+              >
+                {about.partners.companies.map((company, index) => (
+                  <PartnerCard
+                    key={`${company.name}-${index}`}
+                    name={company.name}
+                    logo={company.logo}
+                    link={company.link}
+                    description={company.description}
+                    glowColor={company.glowColor}
+                  />
+                ))}
+              </Grid>
+            </LocaleContent>
+            <LocaleContent locale="pt">
+              <Grid
+                columns="3"
+                tabletColumns="2"
+                mobileColumns="1"
+                gap="m"
+                fillWidth
+              >
+                {aboutPt.partners.companies.map((company, index) => (
+                  <PartnerCard
+                    key={`${company.name}-${index}`}
+                    name={company.name}
+                    logo={company.logo}
+                    link={company.link}
+                    description={company.description}
+                    glowColor={company.glowColor}
+                  />
+                ))}
+              </Grid>
+            </LocaleContent>
           </RevealFx>
         </Column>
       )}
