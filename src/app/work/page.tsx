@@ -1,6 +1,7 @@
 import { getPosts } from "@/app/utils/utils";
 import { Column } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
+import { T } from "@/components/T";
 import { baseURL } from "@/app/resources";
 import { person, work } from "@/app/resources/content";
 
@@ -12,6 +13,9 @@ export async function generateMetadata() {
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://${baseURL}/work`,
+    },
     openGraph: {
       title,
       description,

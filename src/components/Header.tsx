@@ -8,6 +8,9 @@ import styles from "@/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
 import { person, home, about, blog, work, gallery } from "@/app/resources/content";
+import { useLocale } from "@/i18n/LocaleContext";
+import { translations } from "@/i18n/translations";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -44,6 +47,8 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const { locale } = useLocale();
+  const t = translations[locale];
 
   return (
     <>
@@ -81,7 +86,7 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="person"
                     href="/about"
-                    label={about.label}
+                    label={t["nav.about"]}
                     selected={pathname === "/about"}
                   />
                   <ToggleButton
@@ -98,7 +103,7 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="grid"
                     href="/work"
-                    label={work.label}
+                    label={t["nav.work"]}
                     selected={pathname.startsWith("/work")}
                   />
                   <ToggleButton
@@ -115,7 +120,7 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="book"
                     href="/blog"
-                    label={blog.label}
+                    label={t["nav.blog"]}
                     selected={pathname.startsWith("/blog")}
                   />
                   <ToggleButton
@@ -132,7 +137,7 @@ export const Header = () => {
                     className="s-flex-hide"
                     prefixIcon="gallery"
                     href="/gallery"
-                    label={gallery.label}
+                    label={t["nav.gallery"]}
                     selected={pathname.startsWith("/gallery")}
                   />
                   <ToggleButton
@@ -155,6 +160,7 @@ export const Header = () => {
             gap="20"
           >
             <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <LanguageSwitcher />
           </Flex>
         </Flex>
       </Flex>

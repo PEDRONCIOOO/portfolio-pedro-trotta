@@ -1,5 +1,6 @@
 import { Flex } from "@/once-ui/components";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
+import { T } from "@/components/T";
 import { baseURL } from "@/app/resources";
 import { gallery, person } from "@/app/resources/content";
 
@@ -11,6 +12,9 @@ export async function generateMetadata() {
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://${baseURL}/gallery`,
+    },
     openGraph: {
       title,
       description,

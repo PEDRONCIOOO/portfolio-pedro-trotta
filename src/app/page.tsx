@@ -9,6 +9,7 @@ import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
+import { T } from "@/components/T";
 
 export async function generateMetadata() {
   const title = home.title;
@@ -18,6 +19,9 @@ export async function generateMetadata() {
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://${baseURL}`,
+    },
     openGraph: {
       title,
       description,
@@ -52,13 +56,13 @@ export default function Home() {
             name: home.title,
             description: home.description,
             url: `https://${baseURL}`,
-            image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
+            image: `https://${baseURL}/og?title=${encodeURIComponent(home.title)}`,
             publisher: {
               "@type": "Person",
               name: person.name,
               image: {
                 "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
+                url: `https://${baseURL}${person.avatar}`,
               },
             },
           }),
@@ -80,13 +84,16 @@ export default function Home() {
             <Column gap="l">
               <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="s">
                 <Heading wrap="balance" variant="display-strong-xl" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-                  {home.headline}
+                  <T k="home.headline" />
                 </Heading>
               </RevealFx>
 
               <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
                 <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l">
-                  {home.subline}
+                  <T
+                    en={<>I'm <strong>Pedro Trotta</strong>, a Software Engineer<br />With 6+ years of experience, architecting high-performance solutions<br />for BaaS, SaaS &amp; General Softwares.</>}
+                    pt={<>Eu sou <strong>Pedro Trotta</strong>, um Engenheiro de Software<br />Com 6+ anos de experiência, arquitetando soluções de alto desempenho<br />para BaaS, SaaS &amp; Softwares em geral.</>}
+                  />
                 </Text>
               </RevealFx>
             </Column>
@@ -101,7 +108,7 @@ export default function Home() {
                   size="l"
                   arrowIcon
                 >
-                  {home.ctaText}
+                  <T k="home.cta" />
                 </Button>
 
                 <Button
@@ -115,7 +122,7 @@ export default function Home() {
                 >
                   <Flex gap="8" vertical="center">
                     <Icon name="arrowUpRightFromSquare" size="s" />
-                    {home.downloadCV}
+                    <T k="home.downloadCV" />
                   </Flex>
                 </Button>
 
@@ -134,7 +141,7 @@ export default function Home() {
                         size="s"
                       />
                     )}
-                    {about.title}
+                    <T k="home.aboutMe" />
                   </Flex>
                 </Button>
               </Flex>
@@ -164,7 +171,7 @@ export default function Home() {
           <RevealFx translateY="8">
             <Column gap="m" horizontal="center">
               <Heading as="h2" variant="display-strong-l" wrap="balance" style={{ textAlign: "center" }}>
-                {about.partners.title}
+                <T k="home.partners.title" />
               </Heading>
               <Text
                 variant="body-default-l"
@@ -172,7 +179,7 @@ export default function Home() {
                 wrap="balance"
                 style={{ textAlign: "center", maxWidth: "700px" }}
               >
-                {about.partners.description}
+                <T k="home.partners.description" />
               </Text>
             </Column>
           </RevealFx>
@@ -212,14 +219,14 @@ export default function Home() {
                 wrap="balance"
                 style={{ textAlign: "center" }}
               >
-                Selected{" "}
+                <T k="home.selectedWork" />{" "}
                 <span style={{
                   background: "linear-gradient(135deg, #00e5ff, #00acc1)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text"
                 }}>
-                  work
+                  <T k="home.selectedWorkHighlight" />
                 </span>
               </Heading>
               <Text
@@ -228,7 +235,7 @@ export default function Home() {
                 wrap="balance"
                 style={{ textAlign: "center", maxWidth: "600px" }}
               >
-                From e-commerce giants to crypto exchanges, each project represents a unique challenge conquered
+                <T k="home.selectedWorkDescription" />
               </Text>
             </Column>
             <Projects />
@@ -240,7 +247,7 @@ export default function Home() {
           <Flex fillWidth gap="24" mobileDirection="column">
             <Flex flex={1} paddingLeft="l">
               <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
+                <T k="home.latestBlog" />
               </Heading>
             </Flex>
             <Flex flex={3} paddingX="20">

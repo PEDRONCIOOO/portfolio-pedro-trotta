@@ -52,7 +52,7 @@ const social = [
 const home = {
   label: "Home",
   title: `${person.name} Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  description: `Pedro Trotta - Software Engineer with 6+ years of experience in React, Next.js, Node.js, AWS, and cloud-native solutions. View projects, blog, and professional portfolio.`,
   headline: <>Building the future of scalable platforms.</>,
   subline: (
     <>
@@ -303,72 +303,72 @@ const gallery = {
   images: [
     {
       src: "/images/gallery/img-01.jpg",
-      alt: "image",
+      alt: "Pedro Trotta portfolio photography 1",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-02.jpg",
-      alt: "image",
+      alt: "Software engineering workspace",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-03.jpg",
-      alt: "image",
+      alt: "Technology and development environment",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-04.jpg",
-      alt: "image",
+      alt: "Creative workspace setup",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-05.jpg",
-      alt: "image",
+      alt: "Coding environment and tools",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-06.jpg",
-      alt: "image",
+      alt: "Project showcase and development",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-07.jpg",
-      alt: "image",
+      alt: "Team collaboration in software engineering",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-08.jpg",
-      alt: "image",
+      alt: "Technology innovation and design",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-09.jpg",
-      alt: "image",
+      alt: "Development workflow and architecture",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-10.jpg",
-      alt: "image",
+      alt: "Cloud infrastructure and DevOps",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-11.jpg",
-      alt: "image",
+      alt: "Full-stack development project",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-12.jpg",
-      alt: "image",
+      alt: "Software architecture and planning",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-13.jpg",
-      alt: "image",
+      alt: "Pedro Trotta engineering portfolio",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/img-14.jpg",
-      alt: "image",
+      alt: "Modern web development showcase",
       orientation: "horizontal",
     },
   ],

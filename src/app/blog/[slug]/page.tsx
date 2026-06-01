@@ -40,6 +40,9 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://${baseURL}/blog/${post.slug}`,
+    },
     openGraph: {
       title,
       description,

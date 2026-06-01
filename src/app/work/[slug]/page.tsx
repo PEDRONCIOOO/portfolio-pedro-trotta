@@ -45,6 +45,9 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
     images,
     videos,
     team,
+    alternates: {
+      canonical: `https://${baseURL}/work/${post.slug}`,
+    },
     openGraph: {
       title,
       description,

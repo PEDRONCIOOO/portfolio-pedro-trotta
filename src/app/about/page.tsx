@@ -10,6 +10,7 @@ import {
   Tag,
   Text,
 } from "@/once-ui/components";
+import { T } from "@/components/T";
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
@@ -23,6 +24,9 @@ export async function generateMetadata() {
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://${baseURL}/about`,
+    },
     openGraph: {
       title,
       description,
@@ -224,14 +228,14 @@ export default function About() {
 
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
+              <T k="about.intro.description" />
             </Column>
           )}
 
           {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
+                <T k="about.work.title" />
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.work.experiences.map((experience, index) => (
@@ -293,7 +297,7 @@ export default function About() {
           {about.studies.display && (
             <>
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
+                <T k="about.studies.title" />
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
@@ -318,7 +322,7 @@ export default function About() {
                 variant="display-strong-s"
                 marginBottom="40"
               >
-                {about.technical.title}
+                <T k="about.technical.title" />
               </Heading>
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (

@@ -4,6 +4,7 @@ import "@/once-ui/tokens/index.scss";
 import classNames from "classnames";
 
 import { Footer, Header, RouteGuard } from "@/components";
+import { ClientProviders } from "@/components/ClientProviders";
 import { baseURL, effects, style } from "@/app/resources";
 
 import { Inter } from "next/font/google";
@@ -17,6 +18,7 @@ export async function generateMetadata() {
     metadataBase: new URL(`https://${baseURL}`),
     title: home.title,
     description: home.description,
+    authors: [{ name: "Pedro Trotta", url: `https://${baseURL}` }],
     openGraph: {
       title: `${person.firstName} Portfolio`,
       description: "Pedro Trotta Software Engineer with +7 years of professional experience.",
@@ -24,6 +26,7 @@ export async function generateMetadata() {
       siteName: `${person.firstName} Portfolio`,
       locale: "pt_BR",
       type: "website",
+      images: [{ url: `https://${baseURL}/og?title=${encodeURIComponent(home.title)}`, alt: `${person.firstName} Portfolio` }],
     },
     robots: {
       index: true,
@@ -84,6 +87,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         code.variable,
       )}
     >
+      <ClientProviders>
       <ToastProvider>
         <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
           <Background
@@ -151,6 +155,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           <Footer />
         </Column>
       </ToastProvider>
+      </ClientProviders>
     </Flex>
   );
 }
