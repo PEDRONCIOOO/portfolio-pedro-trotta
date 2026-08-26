@@ -1,0 +1,63 @@
+---
+title: "Turbo Entregas"
+publishedAt: "2026-08-01"
+summary: "Full-stack multi-platform delivery ecosystem — customer app, delivery worker app, and admin panel with real-time tracking, multi-gateway payments, and automated financial operations for the Brazilian market."
+videos:
+  - "/videos/turbo-entregas.mp4"
+team:
+  - name: "Pedro Trotta"
+    role: "Software Engineer"
+    avatar: "/images/pedro.jpeg"
+    linkedIn: "https://www.linkedin.com/in/pedro-trotta-853b17323/"
+link: "https://cliente.turboentregas.com.br"
+---
+
+## Overview
+
+Turbo Entregas is a production-grade delivery platform built for the Brazilian market, connecting customers, delivery workers, and store owners through three integrated applications. The system handles the full order lifecycle — from browsing and checkout to real-time delivery tracking and automated payouts — with support for food orders, parcel delivery, and multi-stop routes.
+
+The platform consists of a Flutter customer app, a Flutter delivery worker app, and a Laravel admin panel/API serving as the backbone for all operations.
+
+[Platform App](https://cliente.turboentregas.com.br)
+
+## Platform Architecture
+
+### Customer App (Cliente)
+Flutter mobile app with 35+ feature modules including store browsing, cart management, checkout with multiple payment methods, real-time order tracking via Google Maps, in-app chat with delivery workers, wallet system, loyalty points, referral program, and push notifications.
+
+### Delivery Worker App (Entregador)
+Dedicated Flutter app for delivery personnel with order acceptance/rejection, real-time GPS tracking via WebSocket, background location updates, earnings dashboard, PIX account management, cash-in-hand tracking, and automated withdrawal via ASAAS integration.
+
+### Admin Panel & API (Painel)
+Laravel 10 backend with 40+ API controllers, 130+ Eloquent models, and a full admin dashboard. Manages zones, stores, products, orders, delivery assignments, financial reports, subscription plans, campaigns, and third-party API tokens for external order automation.
+
+## Key Features
+
+- **Real-Time Delivery Tracking**: WebSocket-based live GPS streaming from delivery worker to customer, with Google Maps visualization and zone-based delivery assignment
+- **Multi-Gateway Payments**: PIX (Brazil), Mercado Pago, Stripe, PayPal, Razorpay, Paystack, and offline payment methods — all from a unified checkout flow
+- **Parcel Delivery System**: Distance-based fee calculation, multiple parcel categories, and additional stops support for multi-drop routes
+- **Automated Financial Operations**: ASAAS integration for automatic PIX transfers to delivery workers, webhook-driven status updates, and disbursement tracking
+- **External API**: Bearer token-authenticated REST API enabling third-party systems to create orders, query status, and manage balances programmatically
+- **Loyalty & Rewards**: Points accumulation, referral bonuses, cashback promotions, and wallet top-up bonuses to drive user retention
+- **Real-Time Chat**: In-app messaging between customers, delivery workers, and stores via Firebase and WebSocket channels
+
+## Tech Stack
+
+**Mobile (Customer + Delivery)**: Flutter 3.27, Dart, GetX state management, Drift (local DB)
+**Backend**: Laravel 10, PHP 8.2, MySQL with spatial queries
+**Real-Time**: Laravel WebSockets, WebSocket channels for live location
+**Auth**: Laravel Passport (OAuth2), Firebase Auth, social login (Google, Facebook, Apple)
+**Payments**: PIX, ASAAS, Mercado Pago, Stripe, PayPal, Razorpay
+**Maps & Location**: Google Maps SDK, Geolocator, background location tracking
+**Notifications**: Firebase Cloud Messaging (FCM)
+**Reports**: mPDF for PDF generation, Maatwebsite Excel for data exports
+**Infrastructure**: Firebase, REST API v1
+
+## What I Worked On
+
+- Built and maintained features across all three apps — customer-facing order flow, delivery worker operations, and admin panel configuration
+- Integrated ASAAS payment gateway for automated PIX transfers to delivery workers, including webhook handling for transfer status updates
+- Implemented the external API system with bearer token authentication, enabling third-party platforms to create orders and query status programmatically
+- Developed the parcel delivery module with distance-based pricing, multi-stop routing, and additional stops management
+- Built the delivery worker financial dashboard — earnings reports, withdrawal requests, PIX account setup, and cash-in-hand reconciliation
+- Worked on real-time delivery tracking with WebSocket location streaming and Google Maps integration on the customer side

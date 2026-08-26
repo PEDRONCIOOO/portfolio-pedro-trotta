@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r class.*Controller C:/Users/pedro/TURBOENTREGACOMPLETO/Painel_API/app/Http/Controllers/Api/V1/)"
+    ]
+  }
+}
