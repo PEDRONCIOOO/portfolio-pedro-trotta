@@ -3,6 +3,8 @@
 import { mailchimp } from "@/app/resources";
 import { Button, Flex, Heading, Input, Text, Background, Column } from "@/once-ui/components";
 import { useState } from "react";
+import { useLocale } from "@/i18n/LocaleContext";
+import { translations } from "@/i18n/translations";
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
   let timeout: ReturnType<typeof setTimeout>;
@@ -22,6 +24,8 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
+  const { locale } = useLocale();
+  const t = translations[locale];
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -37,7 +41,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
     setEmail(value);
 
     if (!validateEmail(value)) {
-      setError("Please enter a valid email address.");
+      setError(t["newsletter.invalidEmail"]);
     } else {
       setError("");
     }
@@ -48,7 +52,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
   const handleBlur = () => {
     setTouched(true);
     if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
+      setError(t["newsletter.invalidEmail"]);
     }
   };
 
@@ -113,7 +117,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
         }}
       />
       <Heading style={{ position: "relative" }} marginBottom="s" variant="display-strong-xs">
-        {newsletter.title}
+        {t["newsletter.title"]}
       </Heading>
       <Text
         style={{
@@ -124,7 +128,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
         marginBottom="l"
         onBackground="neutral-medium"
       >
-        {newsletter.description}
+        {t["newsletter.description"]}
       </Text>
       <form
         style={{
@@ -144,7 +148,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
             id="mce-EMAIL"
             name="EMAIL"
             type="email"
-            label="Email"
+            label={t["newsletter.email"]}
             required
             onChange={(e) => {
               if (error) {
@@ -182,7 +186,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
           <div className="clear">
             <Flex height="48" vertical="center">
               <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
-                Subscribe
+                {t["newsletter.subscribe"]}
               </Button>
             </Flex>
           </div>

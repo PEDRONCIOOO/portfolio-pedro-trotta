@@ -1,0 +1,59 @@
+// Home page — mobile refinements (desktop layout unchanged)
+
+.hero {
+  min-height: 100vh;
+
+  @media (--s) {
+    min-height: auto;
+    padding-top: var(--static-space-48);
+    padding-bottom: var(--static-space-32);
+  }
+}
+
+.headline {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  @media (--s) {
+    font-size: clamp(2.125rem, 9vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+}
+
+// Hard line breaks read well on desktop, but create ragged lines on phones
+.subline {
+  @media (--s) {
+    font-size: var(--font-size-body-l, 1.0625rem);
+    line-height: 1.55;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+// Full-width, thumb-friendly stacked CTAs on mobile
+.ctas {
+  @media (--s) {
+    width: 100%;
+
+    > * {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+  }
+}
+
+.tech {
+  @media (--s) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.sectionTitle {
+  @media (--s) {
+    font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+    line-height: 1.15;
+  }
+}

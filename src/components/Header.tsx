@@ -54,6 +54,11 @@ export const Header = () => {
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
+
+      {/* Mobile: language switcher lives top-right, the bottom bar is navigation only */}
+      <Flex show="s" className={styles.mobileLocale} zIndex={10}>
+        <LanguageSwitcher size="s" />
+      </Flex>
       <Flex
         fitHeight
         className={styles.position}
@@ -63,11 +68,12 @@ export const Header = () => {
         padding="8"
         horizontal="center"
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s" hide="s">
           {display.location && <Flex hide="s">{person.locationDisplay || person.location}</Flex>}
         </Flex>
-        <Flex fillWidth horizontal="center">
+        <Flex fillWidth horizontal="center" className={styles.navWrapper}>
           <Flex
+            className={styles.nav}
             background="surface"
             border="neutral-medium"
             radius="m-4"
@@ -79,7 +85,7 @@ export const Header = () => {
               {routes["/"] && (
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
-              <Line vert maxHeight="24" />
+              <Line vert maxHeight="24" className="s-flex-hide" />
               {routes["/about"] && (
                 <>
                   <ToggleButton
@@ -131,6 +137,23 @@ export const Header = () => {
                   />
                 </>
               )}
+              {routes["/courses"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="courses"
+                    href="/courses"
+                    label={t["nav.courses"]}
+                    selected={pathname.startsWith("/courses")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="courses"
+                    href="/courses"
+                    selected={pathname.startsWith("/courses")}
+                  />
+                </>
+              )}
               {routes["/gallery"] && (
                 <>
                   <ToggleButton
@@ -151,7 +174,7 @@ export const Header = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex fillWidth horizontal="end" vertical="center">
+        <Flex fillWidth horizontal="end" vertical="center" hide="s">
           <Flex
             paddingRight="12"
             horizontal="end"

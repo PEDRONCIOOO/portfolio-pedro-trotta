@@ -1,4 +1,4 @@
-export function formatDate(date: string, includeRelative = false) {
+export function formatDate(date: string, includeRelative = false, locale: "en" | "pt" = "en") {
   const currentDate = new Date();
 
   if (!date.includes("T")) {
@@ -12,17 +12,19 @@ export function formatDate(date: string, includeRelative = false) {
 
   let formattedDate = "";
 
+  const pt = locale === "pt";
+
   if (yearsAgo > 0) {
-    formattedDate = `${yearsAgo}y ago`;
+    formattedDate = pt ? `há ${yearsAgo} ano${yearsAgo > 1 ? "s" : ""}` : `${yearsAgo}y ago`;
   } else if (monthsAgo > 0) {
-    formattedDate = `${monthsAgo}mo ago`;
+    formattedDate = pt ? `há ${monthsAgo} ${monthsAgo > 1 ? "meses" : "mês"}` : `${monthsAgo}mo ago`;
   } else if (daysAgo > 0) {
-    formattedDate = `${daysAgo}d ago`;
+    formattedDate = pt ? `há ${daysAgo} dia${daysAgo > 1 ? "s" : ""}` : `${daysAgo}d ago`;
   } else {
-    formattedDate = "Today";
+    formattedDate = pt ? "Hoje" : "Today";
   }
 
-  const fullDate = targetDate.toLocaleString("en-us", {
+  const fullDate = targetDate.toLocaleString(pt ? "pt-BR" : "en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",

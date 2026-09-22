@@ -12,6 +12,7 @@ import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 import { T } from "@/components/T";
 import { LocaleContent } from "@/components/LocaleContent";
+import styles from "./home.module.scss";
 
 export async function generateMetadata() {
   const title = home.title;
@@ -72,7 +73,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <Flex fillWidth fillHeight horizontal="center" vertical="center" style={{ minHeight: "100vh" }}>
+      <Flex fillWidth fillHeight horizontal="center" vertical="center" className={styles.hero}>
         <Grid
           columns="2"
           tabletColumns="1"
@@ -85,13 +86,13 @@ export default function Home() {
           <Column gap="xl" horizontal="start" vertical="center" fillHeight>
             <Column gap="l">
               <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="s">
-                <Heading wrap="balance" variant="display-strong-xl" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+                <Heading wrap="balance" variant="display-strong-xl" className={styles.headline}>
                   <T k="home.headline" />
                 </Heading>
               </RevealFx>
 
               <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
-                <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l">
+                <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" className={styles.subline}>
                   <T
                     en={<>I'm <strong>Pedro Trotta</strong>, a Software Engineer<br />With 6+ years of experience, architecting high-performance solutions<br />for BaaS, SaaS &amp; General Softwares.</>}
                     pt={<>Eu sou <strong>Pedro Trotta</strong>, um Engenheiro de Software<br />Com 6+ anos de experiência, arquitetando soluções de alto desempenho<br />para BaaS, SaaS &amp; Softwares em geral.</>}
@@ -100,8 +101,8 @@ export default function Home() {
               </RevealFx>
             </Column>
 
-            <RevealFx translateY="12" delay={0.4} horizontal="start">
-              <Flex gap="12" wrap mobileDirection="column">
+            <RevealFx translateY="12" delay={0.4} horizontal="start" fillWidth>
+              <Flex gap="12" wrap mobileDirection="column" className={styles.ctas}>
                 <Button
                   id="view-projects"
                   data-border="rounded"
@@ -112,6 +113,21 @@ export default function Home() {
                 >
                   <T k="home.cta" />
                 </Button>
+
+                {routes["/courses"] && (
+                  <Button
+                    id="courses"
+                    data-border="rounded"
+                    href="/courses"
+                    variant="secondary"
+                    size="l"
+                  >
+                    <Flex gap="8" vertical="center">
+                      <Icon name="courses" size="s" onBackground="brand-medium" />
+                      <T k="home.courses" />
+                    </Flex>
+                  </Button>
+                )}
 
                 <Button
                   id="download-cv"
@@ -151,7 +167,7 @@ export default function Home() {
 
             {/* Technology Icons */}
             <RevealFx translateY="16" delay={0.6} horizontal="start">
-              <Flex gap="16" wrap vertical="center">
+              <Flex gap="16" wrap vertical="center" className={styles.tech}>
                 <Icon name="react" size="l" onBackground="brand-medium" tooltip="React" />
                 <Icon name="nextjs" size="l" onBackground="brand-medium" tooltip="Next.js" />
                 <Icon name="typescript" size="l" onBackground="brand-medium" tooltip="TypeScript" />
@@ -172,7 +188,7 @@ export default function Home() {
         <Column fillWidth maxWidth="xl" paddingY="xl" paddingX="l" gap="l">
           <RevealFx translateY="8">
             <Column gap="m" horizontal="center">
-              <Heading as="h2" variant="display-strong-l" wrap="balance" style={{ textAlign: "center" }}>
+              <Heading as="h2" variant="display-strong-l" wrap="balance" style={{ textAlign: "center" }} className={styles.sectionTitle}>
                 <T k="home.partners.title" />
               </Heading>
               <Text
@@ -242,6 +258,7 @@ export default function Home() {
                 variant="display-strong-xl"
                 wrap="balance"
                 style={{ textAlign: "center" }}
+                className={styles.sectionTitle}
               >
                 <T k="home.selectedWork" />{" "}
                 <span style={{

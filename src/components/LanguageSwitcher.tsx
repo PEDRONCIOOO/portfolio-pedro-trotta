@@ -3,7 +3,7 @@
 import { useLocale } from "@/i18n/LocaleContext";
 import { Flex, ToggleButton } from "@/once-ui/components";
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ size = "m" }: { size?: "s" | "m" }) {
   const { locale, setLocale } = useLocale();
 
   return (
@@ -12,17 +12,19 @@ export function LanguageSwitcher() {
       border="neutral-medium"
       radius="m-4"
       shadow="l"
-      padding="4"
-      gap="4"
+      padding={size === "s" ? "2" : "4"}
+      gap="2"
       vertical="center"
     >
       <ToggleButton
         label="EN"
+        size={size}
         selected={locale === "en"}
         onClick={() => setLocale("en")}
       />
       <ToggleButton
         label="PT"
+        size={size}
         selected={locale === "pt"}
         onClick={() => setLocale("pt")}
       />

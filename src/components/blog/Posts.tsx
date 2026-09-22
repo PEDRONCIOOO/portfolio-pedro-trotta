@@ -11,6 +11,14 @@ interface PostsProps {
 export function Posts({ range, columns = "1", thumbnail = false }: PostsProps) {
   let allBlogs = getPosts(["src", "app", "blog", "posts"]);
 
+  // Portuguese twins (same slug) — used for title/tag when the site is in PT
+  let ptBlogs: ReturnType<typeof getPosts> = [];
+  try {
+    ptBlogs = getPosts(["src", "app", "blog", "posts", "pt"]);
+  } catch {
+    ptBlogs = [];
+  }
+
   const sortedBlogs = allBlogs.sort((a, b) => {
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
@@ -24,7 +32,12 @@ export function Posts({ range, columns = "1", thumbnail = false }: PostsProps) {
       {displayedBlogs.length > 0 && (
         <Grid columns={columns} mobileColumns="1" fillWidth marginBottom="40" gap="m">
           {displayedBlogs.map((post) => (
-            <Post key={post.slug} post={post} thumbnail={thumbnail} />
+            <Post
+              key={post.slug}
+              post={post}
+              ptPost={ptBlogs.find((p) => p.slug === post.slug)}
+              thumbnail={thumbnail}
+            />
           ))}
         </Grid>
       )}

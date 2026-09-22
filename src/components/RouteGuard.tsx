@@ -3,63 +3,64 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { routes, protectedRoutes } from "@/app/resources";
-import { Flex, Spinner, Input, Button, Heading, Column, PasswordInput } from "@/once-ui/components";
+import { Flex, Spinner, Button, Heading, Column, PasswordInput } from "@/once-ui/components";
 import NotFound from "@/app/not-found";
 
 interface RouteGuardProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
+}
+
+const dynamicRoutes = ["/blog", "/work", "/courses"] as const;
+
+// Pure, synchronous check — runs identically on the server and the client,
+// so public pages are server-rendered with their full content (SEO).
+function isRouteEnabled(pathname: string | null) {
+  if (!pathname) return false;
+
+  if (pathname in routes) {
+    return Boolean(routes[pathname as keyof typeof routes]);
+  }
+
+  return dynamicRoutes.some((route) => pathname.startsWith(route) && routes[route]);
+}
+
+function isProtected(pathname: string | null) {
+  return Boolean(pathname && protectedRoutes[pathname as keyof typeof protectedRoutes]);
 }
 
 const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   const pathname = usePathname();
-  const [isRouteEnabled, setIsRouteEnabled] = useState(false);
-  const [isPasswordRequired, setIsPasswordRequired] = useState(false);
+  const enabled = isRouteEnabled(pathname);
+  const passwordRequired = isProtected(pathname);
+
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [checkingAuth, setCheckingAuth] = useState(passwordRequired);
   const [error, setError] = useState<string | undefined>(undefined);
-  const [loading, setLoading] = useState(true);
 
+  // Only protected routes need a client round-trip; everything else renders immediately.
   useEffect(() => {
-    const performChecks = async () => {
-      setLoading(true);
-      setIsRouteEnabled(false);
-      setIsPasswordRequired(false);
-      setIsAuthenticated(false);
+    if (!passwordRequired) {
+      setCheckingAuth(false);
+      return;
+    }
 
-      const checkRouteEnabled = () => {
-        if (!pathname) return false;
+    let cancelled = false;
+    setCheckingAuth(true);
+    setIsAuthenticated(false);
 
-        if (pathname in routes) {
-          return routes[pathname as keyof typeof routes];
-        }
+    fetch("/api/check-auth")
+      .then((response) => {
+        if (!cancelled) setIsAuthenticated(response.ok);
+      })
+      .finally(() => {
+        if (!cancelled) setCheckingAuth(false);
+      });
 
-        const dynamicRoutes = ["/blog", "/work"] as const;
-        for (const route of dynamicRoutes) {
-          if (pathname?.startsWith(route) && routes[route]) {
-            return true;
-          }
-        }
-
-        return false;
-      };
-
-      const routeEnabled = checkRouteEnabled();
-      setIsRouteEnabled(routeEnabled);
-
-      if (protectedRoutes[pathname as keyof typeof protectedRoutes]) {
-        setIsPasswordRequired(true);
-
-        const response = await fetch("/api/check-auth");
-        if (response.ok) {
-          setIsAuthenticated(true);
-        }
-      }
-
-      setLoading(false);
+    return () => {
+      cancelled = true;
     };
-
-    performChecks();
-  }, [pathname]);
+  }, [pathname, passwordRequired]);
 
   const handlePasswordSubmit = async () => {
     const response = await fetch("/api/authenticate", {
@@ -76,36 +77,38 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     }
   };
 
-  if (loading) {
-    return (
-      <Flex fillWidth paddingY="128" horizontal="center">
-        <Spinner />
-      </Flex>
-    );
+  if (!enabled) {
+    return <NotFound />;
   }
 
-  if (!isRouteEnabled) {
-		return <NotFound />;
-	}
+  if (passwordRequired) {
+    if (checkingAuth) {
+      return (
+        <Flex fillWidth paddingY="128" horizontal="center">
+          <Spinner />
+        </Flex>
+      );
+    }
 
-  if (isPasswordRequired && !isAuthenticated) {
-    return (
-      <Column paddingY="128" maxWidth={24} gap="24" center>
-        <Heading align="center" wrap="balance">
-          This page is password protected
-        </Heading>
-        <Column fillWidth gap="8" horizontal="center">
-          <PasswordInput
-            id="password"
-            label="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            errorMessage={error}
-          />
-          <Button onClick={handlePasswordSubmit}>Submit</Button>
+    if (!isAuthenticated) {
+      return (
+        <Column paddingY="128" maxWidth={24} gap="24" center>
+          <Heading align="center" wrap="balance">
+            This page is password protected
+          </Heading>
+          <Column fillWidth gap="8" horizontal="center">
+            <PasswordInput
+              id="password"
+              label="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              errorMessage={error}
+            />
+            <Button onClick={handlePasswordSubmit}>Submit</Button>
+          </Column>
         </Column>
-      </Column>
-    );
+      );
+    }
   }
 
   return <>{children}</>;

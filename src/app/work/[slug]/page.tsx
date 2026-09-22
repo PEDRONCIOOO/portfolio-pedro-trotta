@@ -5,7 +5,7 @@ import { AvatarGroup, Button, Column, Flex, Heading, SmartImage, Text } from "@/
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
-import { formatDate } from "@/app/utils/formatDate";
+import { LocalizedDate } from "@/components/LocalizedDate";
 import ScrollToHash from "@/components/ScrollToHash";
 import { LocaleContent } from "@/components/LocaleContent";
 import { T } from "@/components/T";
@@ -146,7 +146,7 @@ export default function Project({ params }: WorkParams) {
         <Flex gap="12" marginBottom="24" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
           <Text variant="body-default-s" onBackground="neutral-weak">
-            {formatDate(post.metadata.publishedAt)}
+            <LocalizedDate date={post.metadata.publishedAt} />
           </Text>
         </Flex>
         <LocaleContent locale="en">

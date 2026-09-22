@@ -11,11 +11,37 @@
     mask-size: 100% 100%;
 }
 
+.mobileLocale {
+    position: fixed;
+    top: calc(var(--static-space-12) + env(safe-area-inset-top));
+    right: var(--static-space-12);
+}
+
 @media (--s) {
     .position {
         top: auto;
         position: fixed;
-        bottom: var(--static-space-24);
+        bottom: calc(var(--static-space-16) + env(safe-area-inset-bottom));
+        padding-left: var(--static-space-12) !important;
+        padding-right: var(--static-space-12) !important;
+    }
+
+    .navWrapper {
+        width: 100%;
+    }
+
+    // Native-style tab bar: evenly spaced, comfortable touch targets
+    .nav {
+        width: 100%;
+        max-width: 26rem;
+        justify-content: space-around !important;
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+
+        > div {
+            width: 100%;
+            justify-content: space-around;
+        }
     }
 
     .mask {

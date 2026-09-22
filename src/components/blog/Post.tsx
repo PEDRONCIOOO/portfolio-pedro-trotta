@@ -3,13 +3,27 @@
 import { Column, Flex, Heading, SmartImage, SmartLink, Tag, Text } from "@/once-ui/components";
 import styles from "./Posts.module.scss";
 import { formatDate } from "@/app/utils/formatDate";
+import { useLocale } from "@/i18n/LocaleContext";
+
+const tagsPt: Record<string, string> = {
+  Career: "Carreira",
+  Journal: "Diário",
+  Technology: "Tecnologia",
+};
 
 interface PostProps {
   post: any;
+  ptPost?: any;
   thumbnail: boolean;
 }
 
-export default function Post({ post, thumbnail }: PostProps) {
+export default function Post({ post, ptPost, thumbnail }: PostProps) {
+  const { locale } = useLocale();
+  const isPt = locale === "pt";
+  const title = (isPt && ptPost?.metadata.title) || post.metadata.title;
+  const tag = post.metadata.tag;
+  const tagLabel = isPt ? (tagsPt[tag] ?? ptPost?.metadata.tag ?? tag) : tag;
+
   return (
     <SmartLink
       fillWidth
@@ -36,19 +50,19 @@ export default function Post({ post, thumbnail }: PostProps) {
             cursor="interactive"
             radius="m"
             src={post.metadata.image}
-            alt={"Thumbnail of " + post.metadata.title}
+            alt={(isPt ? "Miniatura de " : "Thumbnail of ") + title}
             aspectRatio="16 / 9"
           />
         )}
         <Column position="relative" fillWidth gap="8" vertical="center">
           <Heading as="h2" variant="heading-strong-l" wrap="balance">
-            {post.metadata.title}
+            {title}
           </Heading>
           <Text variant="label-default-s" onBackground="neutral-weak">
-            {formatDate(post.metadata.publishedAt, false)}
+            {formatDate(post.metadata.publishedAt, false, locale)}
           </Text>
-          {post.metadata.tag && (
-            <Tag className="mt-8" label={post.metadata.tag} variant="neutral" />
+          {tag && typeof tag === "string" && (
+            <Tag className="mt-8" label={tagLabel} variant="neutral" />
           )}
         </Column>
       </Flex>

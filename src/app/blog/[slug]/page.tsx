@@ -4,7 +4,7 @@ import { getPosts } from "@/app/utils/utils";
 import { AvatarGroup, Button, Column, Heading, Row, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
-import { formatDate } from "@/app/utils/formatDate";
+import { LocalizedDate } from "@/components/LocalizedDate";
 import ScrollToHash from "@/components/ScrollToHash";
 import { LocaleContent } from "@/components/LocaleContent";
 import { T } from "@/components/T";
@@ -119,7 +119,7 @@ export default function Blog({ params }: BlogParams) {
       <Row gap="12" vertical="center">
         {avatars.length > 0 && <AvatarGroup size="s" avatars={avatars} />}
         <Text variant="body-default-s" onBackground="neutral-weak">
-          {formatDate(post.metadata.publishedAt)}
+          <LocalizedDate date={post.metadata.publishedAt} />
         </Text>
       </Row>
       <Column as="article" fillWidth>
