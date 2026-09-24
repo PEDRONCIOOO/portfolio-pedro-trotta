@@ -43,6 +43,11 @@ const social = [
     link: "https://x.com/pedronkiooo",
   },
   {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://instagram.com/devtrotta",
+  },
+  {
     name: "Email",
     icon: "email",
     link: "mailto:pedroforte1911@gmail.com",

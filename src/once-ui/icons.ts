@@ -79,6 +79,7 @@ export const iconLibrary: Record<string, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedin,
   x: FaXTwitter,
+  instagram: PiInstagramLogoDuotone,
   clipboard: HiClipboard,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   react: FaReact,
