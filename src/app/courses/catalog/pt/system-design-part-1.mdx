@@ -1,0 +1,32 @@
+---
+title: "Como Senior Engineers Realmente Pensam Sobre System Design & Architecture Part 1"
+summary: "Comece com um servidor, quebre de proposito e conserte cada falha — montando um sistema de producao do zero."
+description: "Um passo a passo pratico de design de sistemas: escalabilidade, balanceador de carga, servidores stateless, pool de conexoes, replicas de leitura, cache, filas e sharding — explicado quebrando as coisas uma de cada vez."
+level: "Intermediario"
+duration: "~19 min"
+highlights:
+  - "Monte uma arquitetura completa a partir de um unico servidor"
+  - "Entenda o custo de cada peca que voce adiciona"
+  - "Exemplos reais de banco digital"
+modules:
+  - title: "System Design do Zero"
+    description: "Escalonamento vertical vs horizontal, balanceadores, sessoes stateless, pool de conexoes, replicas de leitura, cache, filas com workers e sharding — cada um introduzido so quando o sistema quebra."
+    duration: "~19 min"
+---
+
+## O que voce vai aprender
+
+Cada conceito e introduzido **quebrando** o sistema primeiro — pra voce entender *por que* cada peca existe, nao so o nome dela.
+
+- **Escalabilidade**: vertical (maquina maior) vs horizontal (mais maquinas) e quando escolher cada uma
+- **Balanceador de carga**: o que acontece quando as requisicoes precisam ser distribuidas — e o ponto unico de falha que voce acabou de criar
+- **Servidores stateless**: por que seu login quebra com multiplos servidores e como resolver com sessoes compartilhadas (Redis)
+- **Pool de conexoes**: o limite escondido que derruba seu banco de dados nos picos de trafego
+- **Replicas de leitura**: tire a carga de leitura do banco, mas aceite que seu app vai estar *um pouquinho errado* de proposito
+- **Cache**: troque correcao por velocidade — contagem de seguidores sim, saldo bancario nunca
+- **Filas & workers**: pare de fazer o usuario esperar por emails e notificacoes
+- **Sharding**: a ferramenta mais poderosa do video — e a ultima que voce deve usar
+
+## Pra quem e
+
+Desenvolvedores que sabem construir e fazer deploy de um app, mas querem entender o que acontece quando ele **da certo** — quando o trafego dispara, o banco bate no limite e um servidor so nao da mais conta. Otimo tambem pra quem esta se preparando pra entrevistas de system design.

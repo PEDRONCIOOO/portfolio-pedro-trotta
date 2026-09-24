@@ -48,6 +48,11 @@ const social = [
     link: "https://instagram.com/devtrotta",
   },
   {
+    name: "YouTube",
+    icon: "youtube",
+    link: "https://www.youtube.com/@FloatedHistory",
+  },
+  {
     name: "Email",
     icon: "email",
     link: "mailto:pedroforte1911@gmail.com",

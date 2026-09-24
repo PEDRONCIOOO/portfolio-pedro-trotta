@@ -46,7 +46,7 @@ import {
   PiInstagramLogoDuotone,
 } from "react-icons/pi";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaReact, FaNodeJs, FaAws } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaYoutube, FaReact, FaNodeJs, FaAws } from "react-icons/fa6";
 import { SiTypescript, SiNextdotjs, SiPython, SiDocker } from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -80,6 +80,7 @@ export const iconLibrary: Record<string, IconType> = {
   linkedin: FaLinkedin,
   x: FaXTwitter,
   instagram: PiInstagramLogoDuotone,
+  youtube: FaYoutube,
   clipboard: HiClipboard,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   react: FaReact,

@@ -1,0 +1,41 @@
+---
+title: "How Senior Engineers Really Think About System Design & Architecture Part 1"
+publishedAt: "2026-09-24"
+image: "/images/courses/system-design-part-1.jpg"
+summary: "Start with one server, break it on purpose, and fix each failure — building a production system from scratch."
+description: "A hands-on walkthrough of system design: scaling, load balancers, stateless servers, connection pools, read replicas, caching, queues, and sharding — explained by breaking things one piece at a time."
+free: true
+video: "https://youtu.be/TCCDBUhqb-k"
+categories:
+  - developers
+  - beginners
+level: "Intermediate"
+lessons: 1
+duration: "~19 min"
+featured: true
+highlights:
+  - "Build a full architecture from a single server"
+  - "Understand the cost of every piece you add"
+  - "Real-world examples from digital banking"
+modules:
+  - title: "System Design from Scratch"
+    description: "Vertical vs horizontal scaling, load balancers, stateless sessions, connection pools, read replicas, caching, queues with workers, and sharding — each introduced only when the system breaks."
+    duration: "~19 min"
+---
+
+## What you'll learn
+
+Every concept is introduced by **breaking** the system first — so you understand *why* each piece exists, not just what it's called.
+
+- **Scaling**: vertical (bigger machine) vs horizontal (more machines) and when to pick each
+- **Load balancers**: what happens when requests need to be distributed — and the single point of failure you just created
+- **Stateless servers**: why your login breaks across multiple servers and how to fix it with shared sessions (Redis)
+- **Connection pools**: the hidden limit that crashes your database during traffic spikes
+- **Read replicas**: offload reads, but accept that your app will be *a little wrong* on purpose
+- **Caching**: trade correctness for speed — follower counts yes, bank balances never
+- **Queues & workers**: stop making users wait for emails and notifications
+- **Sharding**: the most powerful tool in the video — and the last one you should use
+
+## Who it's for
+
+Developers who can build and deploy an app but want to understand what happens when it **succeeds** — when traffic spikes, databases hit their limits, and one server is no longer enough. Also great for anyone preparing for system design interviews.
