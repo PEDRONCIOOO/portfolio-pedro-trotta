@@ -102,5 +102,4 @@ export const iconLibrary: Record<string, IconType> = {
   shield: PiShieldCheckDuotone,
   infinity: PiInfinityDuotone,
   mobile: PiDeviceMobileDuotone,
-  instagram: PiInstagramLogoDuotone,
 };
