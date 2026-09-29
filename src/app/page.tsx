@@ -114,20 +114,20 @@ export default function Home() {
                   <T k="home.cta" />
                 </Button>
 
-                {routes["/courses"] && (
-                  <Button
-                    id="courses"
-                    data-border="rounded"
-                    href="/courses"
-                    variant="secondary"
-                    size="l"
-                  >
-                    <Flex gap="8" vertical="center">
-                      <Icon name="courses" size="s" onBackground="brand-medium" />
-                      <T k="home.courses" />
-                    </Flex>
-                  </Button>
-                )}
+                <Button
+                  id="lab"
+                  data-border="rounded"
+                  href="https://lab.trotta.dev"
+                  variant="secondary"
+                  size="l"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Flex gap="8" vertical="center">
+                    <Icon name="code" size="s" onBackground="brand-medium" />
+                    Laboratório
+                  </Flex>
+                </Button>
 
                 <Button
                   id="download-cv"
