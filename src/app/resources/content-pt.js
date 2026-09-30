@@ -55,7 +55,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:pedroforte1911@gmail.com",
+    link: "mailto:contato@trotta.dev",
   },
 ];
 
