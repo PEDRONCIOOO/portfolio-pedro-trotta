@@ -9,16 +9,21 @@ const translations = {
     "nav.courses": "Courses",
 
     // Home page
-    "home.headline": "Building the future of scalable platforms.",
+    "home.headline": "Engineering software that moves the world.",
     "home.subline.intro": "I'm",
     "home.subline.name": "Pedro Trotta",
-    "home.subline.role": ", a Software Engineer",
-    "home.subline.experience": "With 6+ years of experience, architecting high-performance solutions",
-    "home.subline.domains": "for BaaS, SaaS & General Softwares.",
+    "home.subline.role": ", a Senior Software Engineer",
+    "home.subline.experience": "With 6+ years of experience architecting high-performance solutions",
+    "home.subline.domains": "for enterprise, SaaS & transportation platforms.",
     "home.cta": "View Projects",
     "home.courses": "Courses",
     "home.downloadCV": "Download CV",
     "home.aboutMe": "About me",
+    "home.status.role": "Senior Software Engineer",
+    "home.status.company": "Wabtec Corporation",
+    "home.metric.years": "Years",
+    "home.metric.projects": "Projects",
+    "home.metric.uptime": "Uptime",
     "home.partners.title": "Partners & Affiliates",
     "home.partners.description": "I collaborate with innovative companies and visionary teams, delivering high-impact solutions as a trusted technology partner. Here are some of the organizations I've proudly worked with:",
     "home.selectedWork": "Selected",
@@ -38,10 +43,10 @@ const translations = {
     "about.connect.description": "Feel free to reach out to discuss projects, collaborations, or just to say hi.",
 
     // About - Work Experience
-    "about.work.axia.role": "Senior Full-Stack Engineer",
-    "about.work.axia.achievement1": "Architected and deployed microservices on AWS EKS with Docker and Kubernetes, achieving 99.9% uptime and reducing deployment time by 75%.",
-    "about.work.axia.achievement2": "Built real-time applications using Express.js, TypeScript, and WebSocket APIs, serving 500k+ concurrent users with sub-10ms response times.",
-    "about.work.axia.achievement3": "Implemented CI/CD pipelines with Azure Devops and AWS CodePipeline, enabling automated testing and zero-downtime deployments.",
+    "about.work.wabtec.role": "Senior Software Engineer",
+    "about.work.wabtec.achievement1": "End-to-end ownership of business-critical applications in Wabtec's Digital Technology organization, from new product development to modernization and support of existing systems for a global rail and transportation company.",
+    "about.work.wabtec.achievement2": "Stack-agnostic development across Node.js, Java/Spring Boot, Angular, and TypeScript, adapting technology choices to each problem's requirements.",
+    "about.work.wabtec.achievement3": "Working with Product Owners, business stakeholders, and engineering teams across the US, Latin America, and other regions to turn requirements into reliable, scalable software.",
 
     // About - Studies
     "about.studies.aws": "Advanced cloud architecture and services design on Amazon Web Services.",
@@ -60,7 +65,8 @@ const translations = {
     "about.skills.emerging.description": "AI/ML integration with OpenAI API, LangChain, and TensorFlow. Blockchain development with Solidity and Web3.js. Real-time features with Socket.io and WebRTC.",
 
     // About - Partner descriptions
-    "about.partner.axia": "Digital solutions, cybersecurity, and blockchain development where I lead software engineering initiatives.",
+    "about.partner.wabtec": "Global rail and transportation company where I serve as Senior Software Engineer in the Digital Technology organization.",
+    "about.partner.axia": "Digital solutions, cybersecurity, and blockchain development where I led software engineering initiatives.",
     "about.partner.cvm": "The Securities and Exchange Commission of Brazil is the securities market authority in Brazil. It regulates the capital markets in Brazil and all of its participants.",
     "about.partner.tokeniza": "Architecting high-performance solutions for baas solutions including PIX globally.",
     "about.partner.asaas": "Digital banking & financial software services",
@@ -139,16 +145,21 @@ const translations = {
     "nav.courses": "Cursos",
 
     // Home page
-    "home.headline": "Construindo o futuro de plataformas escaláveis.",
+    "home.headline": "Engenharia de software que move o mundo.",
     "home.subline.intro": "Eu sou",
     "home.subline.name": "Pedro Trotta",
-    "home.subline.role": ", um Engenheiro de Software",
-    "home.subline.experience": "Com 6+ anos de experiência, arquitetando soluções de alto desempenho",
-    "home.subline.domains": "para BaaS, SaaS & Softwares em geral.",
+    "home.subline.role": ", Engenheiro de Software Sênior",
+    "home.subline.experience": "Com 6+ anos de experiência arquitetando soluções de alta performance",
+    "home.subline.domains": "para plataformas enterprise, SaaS e transporte.",
     "home.cta": "Ver Projetos",
     "home.courses": "Cursos",
     "home.downloadCV": "Baixar CV",
     "home.aboutMe": "Sobre mim",
+    "home.status.role": "Engenheiro de Software Sênior",
+    "home.status.company": "Wabtec Corporation",
+    "home.metric.years": "Anos",
+    "home.metric.projects": "Projetos",
+    "home.metric.uptime": "Uptime",
     "home.partners.title": "Parceiros & Afiliados",
     "home.partners.description": "Colaboro com empresas inovadoras e equipes visionárias, entregando soluções de alto impacto como parceiro tecnológico confiável. Aqui estão algumas das organizações com as quais tive o orgulho de trabalhar:",
     "home.selectedWork": "Trabalhos",
@@ -168,10 +179,10 @@ const translations = {
     "about.connect.description": "Fique à vontade para entrar em contato para discutir projetos, colaborações ou apenas para dizer olá.",
 
     // About - Work Experience
-    "about.work.axia.role": "Engenheiro Full-Stack Sênior",
-    "about.work.axia.achievement1": "Arquitetou e implantou microsserviços no AWS EKS com Docker e Kubernetes, alcançando 99.9% de uptime e reduzindo o tempo de deploy em 75%.",
-    "about.work.axia.achievement2": "Construiu aplicações em tempo real usando Express.js, TypeScript e APIs WebSocket, atendendo 500k+ usuários simultâneos com tempos de resposta abaixo de 10ms.",
-    "about.work.axia.achievement3": "Implementou pipelines CI/CD com Azure DevOps e AWS CodePipeline, possibilitando testes automatizados e deploys sem downtime.",
+    "about.work.wabtec.role": "Engenheiro de Software Sênior",
+    "about.work.wabtec.achievement1": "Propriedade end-to-end de aplicações críticas na organização de Tecnologia Digital da Wabtec, desde o desenvolvimento de novos produtos até a modernização e suporte de sistemas existentes para uma empresa global de transporte ferroviário.",
+    "about.work.wabtec.achievement2": "Desenvolvimento stack-agnostic com Node.js, Java/Spring Boot, Angular e TypeScript, adaptando as escolhas tecnológicas aos requisitos de cada problema.",
+    "about.work.wabtec.achievement3": "Trabalho com Product Owners, stakeholders de negócios e equipes de engenharia nos EUA, América Latina e outras regiões para transformar requisitos em software confiável e escalável.",
 
     // About - Studies
     "about.studies.aws": "Arquitetura avançada em nuvem e design de serviços na Amazon Web Services.",
@@ -190,7 +201,8 @@ const translations = {
     "about.skills.emerging.description": "Integração AI/ML com OpenAI API, LangChain e TensorFlow. Desenvolvimento blockchain com Solidity e Web3.js. Recursos em tempo real com Socket.io e WebRTC.",
 
     // About - Partner descriptions
-    "about.partner.axia": "Soluções digitais, cibersegurança e desenvolvimento blockchain onde lidero iniciativas de engenharia de software.",
+    "about.partner.wabtec": "Empresa global de transporte ferroviário onde atuo como Engenheiro de Software Sênior na organização de Tecnologia Digital.",
+    "about.partner.axia": "Soluções digitais, cibersegurança e desenvolvimento blockchain onde liderei iniciativas de engenharia de software.",
     "about.partner.cvm": "A Comissão de Valores Mobiliários do Brasil é a autoridade do mercado de valores mobiliários no Brasil. Ela regula os mercados de capitais no Brasil e todos os seus participantes.",
     "about.partner.tokeniza": "Arquitetando soluções de alto desempenho para soluções BaaS incluindo PIX globalmente.",
     "about.partner.asaas": "Serviços de banco digital e software financeiro",

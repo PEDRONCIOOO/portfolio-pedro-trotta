@@ -46,8 +46,8 @@ import {
   PiInstagramLogoDuotone,
 } from "react-icons/pi";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaYoutube, FaReact, FaNodeJs, FaAws } from "react-icons/fa6";
-import { SiTypescript, SiNextdotjs, SiPython, SiDocker } from "react-icons/si";
+import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter, FaYoutube, FaReact, FaNodeJs, FaAws, FaJava } from "react-icons/fa6";
+import { SiTypescript, SiNextdotjs, SiPython, SiDocker, SiSharp } from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -90,6 +90,8 @@ export const iconLibrary: Record<string, IconType> = {
   nextjs: SiNextdotjs,
   python: SiPython,
   docker: SiDocker,
+  java: FaJava,
+  csharp: SiSharp,
   courses: PiGraduationCapDuotone,
   sparkle: PiSparkleDuotone,
   plant: PiPlantDuotone,

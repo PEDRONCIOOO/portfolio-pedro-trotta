@@ -1,8 +1,9 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Grid, Icon } from "@/once-ui/components";
+import { Heading, Flex, Text, Button, RevealFx, Column, Grid, Icon } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
 import { CodeTerminal } from "@/components/CodeTerminal";
+import { StatusBadge } from "@/components/StatusBadge";
 import { PartnerCard } from "@/components/PartnerCard";
 
 import { baseURL, routes } from "@/app/resources";
@@ -85,8 +86,15 @@ export default function Home() {
           {/* Left Column - Text Content */}
           <Column gap="xl" horizontal="start" vertical="center" fillHeight>
             <Column gap="l">
-              <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="s">
-                <Heading wrap="balance" variant="display-strong-xl" className={styles.headline}>
+              <RevealFx translateY="4" fillWidth horizontal="start">
+                <T
+                  en={<StatusBadge role="Senior Software Engineer" company="Wabtec Corporation" href="https://www.wabteccorp.com/" />}
+                  pt={<StatusBadge role="Engenheiro de Software Sênior" company="Wabtec Corporation" href="https://www.wabteccorp.com/" />}
+                />
+              </RevealFx>
+
+              <RevealFx translateY="4" delay={0.1} fillWidth horizontal="start" paddingBottom="s">
+                <Heading wrap="balance" variant="display-strong-xl" className={`${styles.headline} ${styles.gradientHeadline}`}>
                   <T k="home.headline" />
                 </Heading>
               </RevealFx>
@@ -94,8 +102,8 @@ export default function Home() {
               <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
                 <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" className={styles.subline}>
                   <T
-                    en={<>I'm <strong>Pedro Trotta</strong>, a Software Engineer<br />With 6+ years of experience, architecting high-performance solutions<br />for BaaS, SaaS &amp; General Softwares.</>}
-                    pt={<>Eu sou <strong>Pedro Trotta</strong>, um Engenheiro de Software<br />Com 6+ anos de experiência, arquitetando soluções de alto desempenho<br />para BaaS, SaaS &amp; Softwares em geral.</>}
+                    en={<>I'm <strong>Pedro Trotta</strong>, a Senior Software Engineer with 6+ years of experience architecting high-performance solutions for enterprise, SaaS &amp; transportation platforms.</>}
+                    pt={<>Eu sou <strong>Pedro Trotta</strong>, Engenheiro de Software Sênior com 6+ anos de experiência arquitetando soluções de alta performance para plataformas enterprise, SaaS e transporte.</>}
                   />
                 </Text>
               </RevealFx>
@@ -143,35 +151,20 @@ export default function Home() {
                     <T k="home.downloadCV" />
                   </Flex>
                 </Button>
-
-                <Button
-                  id="about"
-                  data-border="rounded"
-                  href="/about"
-                  variant="tertiary"
-                  size="l"
-                >
-                  <Flex gap="8" vertical="center">
-                    {about.avatar.display && (
-                      <Avatar
-                        style={{ marginLeft: "-0.25rem", marginRight: "0.25rem" }}
-                        src={person.avatar}
-                        size="s"
-                      />
-                    )}
-                    <T k="home.aboutMe" />
-                  </Flex>
-                </Button>
               </Flex>
             </RevealFx>
 
-            {/* Technology Icons */}
+            {/* Tech Stack */}
             <RevealFx translateY="16" delay={0.6} horizontal="start">
-              <Flex gap="16" wrap vertical="center" className={styles.tech}>
+              <Flex gap="8" wrap vertical="center">
                 <Icon name="react" size="l" onBackground="brand-medium" tooltip="React" />
                 <Icon name="nextjs" size="l" onBackground="brand-medium" tooltip="Next.js" />
                 <Icon name="typescript" size="l" onBackground="brand-medium" tooltip="TypeScript" />
                 <Icon name="nodejs" size="l" onBackground="brand-medium" tooltip="Node.js" />
+                <Icon name="java" size="l" onBackground="brand-medium" tooltip="Java" />
+                <Icon name="csharp" size="l" onBackground="brand-medium" tooltip="C#" />
+                <Icon name="aws" size="l" onBackground="brand-medium" tooltip="AWS" />
+                <Icon name="docker" size="l" onBackground="brand-medium" tooltip="Docker" />
               </Flex>
             </RevealFx>
           </Column>
@@ -262,7 +255,7 @@ export default function Home() {
               >
                 <T k="home.selectedWork" />{" "}
                 <span style={{
-                  background: "linear-gradient(135deg, #00e5ff, #00acc1)",
+                  background: "linear-gradient(135deg, var(--brand-on-background-weak), var(--brand-background-strong))",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text"

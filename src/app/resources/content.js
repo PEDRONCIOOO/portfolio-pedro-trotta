@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Software Engineer",
+  role: "Senior Software Engineer",
   avatar: "/images/pedro.jpeg",
   location: "America/Campo_Grande", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   locationDisplay: "Brasil",
@@ -50,7 +50,7 @@ const social = [
   {
     name: "YouTube",
     icon: "youtube",
-    link: "https://www.youtube.com/@FloatedHistory",
+    link: "https://www.youtube.com/@devtrotta",
   },
   {
     name: "Email",
@@ -63,14 +63,11 @@ const home = {
   label: "Home",
   title: `${person.name} Portfolio`,
   description: `Pedro Trotta - Software Engineer with 6+ years of experience in React, Next.js, Node.js, AWS, and cloud-native solutions. View projects, blog, and professional portfolio.`,
-  headline: <>Building the future of scalable platforms.</>,
+  headline: <>Engineering software that moves the world.</>,
   subline: (
     <>
-      I'm <strong>Pedro Trotta</strong>, a Software Engineer
-      <br />
-      With 6+ years of experience, architecting high-performance solutions
-      <br />
-      for BaaS, SaaS & General Softwares.
+      I'm <strong>Pedro Trotta</strong>, a Senior Software Engineer with 6+ years
+      of experience architecting high-performance solutions for enterprise, SaaS & transportation platforms.
     </>
   ),
   ctaText: "View Projects",
@@ -109,39 +106,26 @@ const about = {
     title: "Current Role",
     experiences: [
       {
-        company: "Axia Digital Solutions",
+        company: "Wabtec Corporation",
         timeframe: "2025 - Present",
-        role: "Senior Full-Stack Engineer",
+        role: "Senior Software Engineer",
         achievements: [
           <>
-            Architected and deployed microservices on <InlineCode>AWS EKS</InlineCode> with 
-            <InlineCode>Docker</InlineCode> and <InlineCode>Kubernetes</InlineCode>, achieving 99.9% uptime 
-            and reducing deployment time by 75%.
+            End-to-end ownership of business-critical applications in Wabtec's Digital Technology organization,
+            from new product development to modernization and support of existing systems for a global rail
+            and transportation company.
           </>,
           <>
-            Built real-time applications using <InlineCode>Express.js</InlineCode>, 
-            <InlineCode>TypeScript</InlineCode>, and <InlineCode>WebSocket</InlineCode> APIs, 
-            serving 500k+ concurrent users with sub-10ms response times.
+            Stack-agnostic development across <InlineCode>Node.js</InlineCode>, <InlineCode>Java/Spring Boot</InlineCode>,
+            <InlineCode>Angular</InlineCode>, and <InlineCode>TypeScript</InlineCode>, adapting technology
+            choices to each problem's requirements.
           </>,
           <>
-            Implemented CI/CD pipelines with <InlineCode>Azure Devops</InlineCode> and 
-            <InlineCode>AWS CodePipeline</InlineCode>, enabling automated testing and zero-downtime deployments.
+            Working with Product Owners, business stakeholders, and engineering teams across the US, Latin America,
+            and other regions to turn requirements into reliable, scalable software.
           </>,
         ],
-        images: [
-          {
-            src: "/images/projects/project-01/axiadigital.png",
-            alt: "Axia Digital Solutions",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/axiadigital2.png",
-            alt: "Axia Digital Solutions",
-            width: 16,
-            height: 9,
-          }
-        ],
+        images: [],
       }
     ],
   },
@@ -156,10 +140,17 @@ const about = {
     ),
     companies: [
       {
+        name: "Wabtec Corporation",
+        logo: "/images/partners/logo-wabtec.svg",
+        link: "https://www.wabteccorp.com/",
+        description: "Global rail and transportation company where I serve as Senior Software Engineer in the Digital Technology organization.",
+        glowColor: "#ff0000"
+      },
+      {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
         link: "https://axiadigitalsolutions.com/",
-        description: "Digital solutions, cybersecurity, and blockchain development where I lead software engineering initiatives.",
+        description: "Digital solutions, cybersecurity, and blockchain development where I led software engineering initiatives.",
         glowColor: "#00d4ff"
       },
       {

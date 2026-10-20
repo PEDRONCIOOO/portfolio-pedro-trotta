@@ -51,6 +51,13 @@
   }
 }
 
+.gradientHeadline {
+  background: linear-gradient(135deg, var(--brand-on-background-weak), var(--brand-background-strong));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .sectionTitle {
   @media (--s) {
     font-size: clamp(1.75rem, 8vw, 2.25rem) !important;

@@ -1,0 +1,47 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 12px;
+  border-radius: var(--radius-full);
+  background: var(--surface-background);
+  border: 1px solid var(--neutral-alpha-weak);
+  backdrop-filter: var(--backdrop-filter);
+  font-size: var(--font-size-body-s);
+  color: var(--neutral-on-background-weak);
+  text-decoration: none;
+  transition: var(--transition-micro-medium);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--neutral-alpha-medium);
+  }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success-solid-medium);
+  position: relative;
+  flex-shrink: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: var(--success-solid-weak);
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+.company {
+  color: var(--neutral-on-background-strong);
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0; transform: scale(2); }
+}

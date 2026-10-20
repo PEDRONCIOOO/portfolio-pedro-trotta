@@ -49,12 +49,17 @@ const primary = Inter({
   display: "swap",
 });
 
-type FontConfig = {
-  variable: string;
-};
+const secondary = Inter({
+  variable: "--font-secondary",
+  subsets: ["latin"],
+  display: "swap",
+});
 
-const secondary: FontConfig | undefined = undefined;
-const tertiary: FontConfig | undefined = undefined;
+const tertiary = Inter({
+  variable: "--font-tertiary",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const code = Source_Code_Pro({
   variable: "--font-code",
@@ -83,8 +88,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-transition={style.transition}
       className={classNames(
         primary.variable,
-        secondary ? secondary.variable : "",
-        tertiary ? tertiary.variable : "",
+        secondary.variable,
+        tertiary.variable,
         code.variable,
       )}
     >

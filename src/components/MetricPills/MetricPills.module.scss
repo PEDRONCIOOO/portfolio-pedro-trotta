@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-m);
+  background: var(--surface-background);
+  border: 1px solid var(--neutral-alpha-weak);
+  backdrop-filter: var(--backdrop-filter);
+}
+
+.value {
+  font-size: var(--font-size-body-l);
+  font-weight: 700;
+  color: var(--neutral-on-background-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  font-size: var(--font-size-label-s);
+  color: var(--neutral-on-background-weak);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 8px;
+  }
+  .pill {
+    padding: 6px 12px;
+  }
+}

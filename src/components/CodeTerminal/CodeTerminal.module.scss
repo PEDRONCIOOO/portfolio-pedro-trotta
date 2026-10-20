@@ -14,7 +14,8 @@
     transition: all 0.4s ease;
     box-shadow:
       0 30px 60px rgba(0, 0, 0, 0.5),
-      0 15px 30px rgba(0, 0, 0, 0.3);
+      0 15px 30px rgba(0, 0, 0, 0.3),
+      0 0 40px var(--brand-alpha-weak);
   }
 }
 
@@ -64,13 +65,13 @@
   color: #d4d4d4; // Default text color (VS Code)
   overflow-wrap: break-word; // Modern alternative to word-wrap
 
-  // VS Code Dark Theme syntax highlighting
+  // Warm-red syntax highlighting (matching brand)
   :global(.keyword) {
-    color: #569cd6; // Blue for keywords (interface, function, const, etc.)
+    color: #e06c75; // Soft red for keywords
   }
 
   :global(.type) {
-    color: #4ec9b0; // Teal for types (Developer, string, boolean)
+    color: #d19a66; // Warm amber for types
   }
 
   :global(.string) {
@@ -78,11 +79,11 @@
   }
 
   :global(.property) {
-    color: #9cdcfe; // Light blue for object properties
+    color: #e5c07b; // Warm gold for object properties
   }
 
   :global(.boolean) {
-    color: #569cd6; // Blue for boolean values
+    color: #e06c75; // Soft red for boolean values
   }
 
   :global(.function) {
@@ -90,11 +91,11 @@
   }
 
   :global(.number) {
-    color: #b5cea8; // Light green for numbers
+    color: #d19a66; // Warm amber for numbers
   }
 
   :global(.comment) {
-    color: #6a9955; // Green for comments
+    color: #7f848e; // Neutral gray for comments
     font-style: italic;
   }
 

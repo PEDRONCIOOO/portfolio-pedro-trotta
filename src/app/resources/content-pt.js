@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Engenheiro de Software",
+  role: "Engenheiro de Software Sênior",
   avatar: "/images/pedro.jpeg",
   location: "America/Campo_Grande", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   locationDisplay: "Brasil",
@@ -50,7 +50,7 @@ const social = [
   {
     name: "YouTube",
     icon: "youtube",
-    link: "https://www.youtube.com/@FloatedHistory",
+    link: "https://www.youtube.com/@devtrotta",
   },
   {
     name: "Email",
@@ -63,14 +63,11 @@ const home = {
   label: "Inicio",
   title: `Portfolio de ${person.name}`,
   description: `Pedro Trotta - Engenheiro de Software com mais de 6 anos de experiencia em React, Next.js, Node.js, AWS e solucoes cloud-native. Veja projetos, blog e portfolio profissional.`,
-  headline: <>Construindo o futuro de plataformas escalaveis.</>,
+  headline: <>Engenharia de software que move o mundo.</>,
   subline: (
     <>
-      Eu sou <strong>Pedro Trotta</strong>, um Engenheiro de Software
-      <br />
-      Com mais de 6 anos de experiencia, arquitetando solucoes de alta performance
-      <br />
-      para BaaS, SaaS e Softwares em geral.
+      Eu sou <strong>Pedro Trotta</strong>, Engenheiro de Software Senior com 6+ anos
+      de experiencia arquitetando solucoes de alta performance para plataformas enterprise, SaaS e transporte.
     </>
   ),
   ctaText: "Ver Projetos",
@@ -109,39 +106,26 @@ const about = {
     title: "Cargo Atual",
     experiences: [
       {
-        company: "Axia Digital Solutions",
+        company: "Wabtec Corporation",
         timeframe: "2025 - Presente",
-        role: "Engenheiro Full-Stack Senior",
+        role: "Engenheiro de Software Sênior",
         achievements: [
           <>
-            Arquitetou e implantou microsservicos no <InlineCode>AWS EKS</InlineCode> com
-            <InlineCode>Docker</InlineCode> e <InlineCode>Kubernetes</InlineCode>, alcancando 99,9% de uptime
-            e reduzindo o tempo de deploy em 75%.
+            Propriedade end-to-end de aplicações críticas na organização de Tecnologia Digital da Wabtec,
+            desde o desenvolvimento de novos produtos até a modernização e suporte de sistemas existentes
+            para uma empresa global de transporte ferroviário.
           </>,
           <>
-            Construiu aplicacoes em tempo real usando <InlineCode>Express.js</InlineCode>,
-            <InlineCode>TypeScript</InlineCode> e APIs <InlineCode>WebSocket</InlineCode>,
-            atendendo mais de 500 mil usuarios simultaneos com tempos de resposta abaixo de 10ms.
+            Desenvolvimento stack-agnostic com <InlineCode>Node.js</InlineCode>, <InlineCode>Java/Spring Boot</InlineCode>,
+            <InlineCode>Angular</InlineCode> e <InlineCode>TypeScript</InlineCode>, adaptando as escolhas
+            tecnológicas aos requisitos de cada problema.
           </>,
           <>
-            Implementou pipelines de CI/CD com <InlineCode>Azure Devops</InlineCode> e
-            <InlineCode>AWS CodePipeline</InlineCode>, habilitando testes automatizados e deploys sem downtime.
+            Trabalho com Product Owners, stakeholders de negócios e equipes de engenharia nos EUA, América Latina
+            e outras regiões para transformar requisitos em software confiável e escalável.
           </>,
         ],
-        images: [
-          {
-            src: "/images/projects/project-01/axiadigital.png",
-            alt: "Axia Digital Solutions",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/axiadigital2.png",
-            alt: "Axia Digital Solutions",
-            width: 16,
-            height: 9,
-          }
-        ],
+        images: [],
       }
     ],
   },
@@ -156,10 +140,17 @@ const about = {
     ),
     companies: [
       {
+        name: "Wabtec Corporation",
+        logo: "/images/partners/logo-wabtec.svg",
+        link: "https://www.wabteccorp.com/",
+        description: "Empresa global de transporte ferroviário onde atuo como Engenheiro de Software Sênior na organização de Tecnologia Digital.",
+        glowColor: "#ff0000"
+      },
+      {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
         link: "https://axiadigitalsolutions.com/",
-        description: "Solucoes digitais, ciberseguranca e desenvolvimento blockchain onde lidero iniciativas de engenharia de software.",
+        description: "Soluções digitais, cibersegurança e desenvolvimento blockchain onde liderei iniciativas de engenharia de software.",
         glowColor: "#00d4ff"
       },
       {
