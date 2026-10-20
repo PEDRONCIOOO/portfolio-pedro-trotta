@@ -107,7 +107,7 @@ const about = {
     experiences: [
       {
         company: "Wabtec Corporation",
-        timeframe: "2025 - Presente",
+        timeframe: "2026 - Presente",
         role: "Engenheiro de Software Sênior",
         achievements: [
           <>
