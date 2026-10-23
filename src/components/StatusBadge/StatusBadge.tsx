@@ -2,19 +2,33 @@ import styles from "./StatusBadge.module.scss";
 
 interface StatusBadgeProps {
   role: string;
-  company: string;
-  href: string;
+  company?: string;
+  href?: string;
 }
 
 const StatusBadge: React.FC<StatusBadgeProps> = ({ role, company, href }) => {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={styles.badge}>
+  const content = (
+    <>
       <span className={styles.dot} />
       <span>
-        {role} @ <span className={styles.company}>{company}</span>
+        {company ? (
+          <>{role} @ <span className={styles.company}>{company}</span></>
+        ) : (
+          <span className={styles.company}>{role}</span>
+        )}
       </span>
-    </a>
+    </>
   );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={styles.badge}>
+        {content}
+      </a>
+    );
+  }
+
+  return <span className={styles.badge}>{content}</span>;
 };
 
 export { StatusBadge };

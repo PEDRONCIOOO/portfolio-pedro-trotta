@@ -88,8 +88,8 @@ export default function Home() {
             <Column gap="l">
               <RevealFx translateY="4" fillWidth horizontal="start">
                 <T
-                  en={<StatusBadge role="Senior Software Engineer" company="Wabtec Corporation" href="https://www.wabteccorp.com/" />}
-                  pt={<StatusBadge role="Engenheiro de Software Sênior" company="Wabtec Corporation" href="https://www.wabteccorp.com/" />}
+                  en={<StatusBadge role="Open-Source Maintainer · Senior Software Engineer" />}
+                  pt={<StatusBadge role="Open-Source Maintainer · Engenheiro de Software Sênior" />}
                 />
               </RevealFx>
 

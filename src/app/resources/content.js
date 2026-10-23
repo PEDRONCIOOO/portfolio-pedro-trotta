@@ -102,32 +102,9 @@ const about = {
     ),
   },
   work: {
-    display: true,
-    title: "Current Role",
-    experiences: [
-      {
-        company: "Wabtec Corporation",
-        timeframe: "2026 - Present",
-        role: "Senior Software Engineer",
-        achievements: [
-          <>
-            End-to-end ownership of business-critical applications in Wabtec's Digital Technology organization,
-            from new product development to modernization and support of existing systems for a global rail
-            and transportation company.
-          </>,
-          <>
-            Stack-agnostic development across <InlineCode>Node.js</InlineCode>, <InlineCode>Java/Spring Boot</InlineCode>,
-            <InlineCode>Angular</InlineCode>, and <InlineCode>TypeScript</InlineCode>, adapting technology
-            choices to each problem's requirements.
-          </>,
-          <>
-            Working with Product Owners, business stakeholders, and engineering teams across the US, Latin America,
-            and other regions to turn requirements into reliable, scalable software.
-          </>,
-        ],
-        images: [],
-      }
-    ],
+    display: false,
+    title: "Experience",
+    experiences: /** @type {Array<{company: string, timeframe: string, role: string, achievements: any[], images: any[]}>} */ ([]),
   },
   // Nova seção: Parceiros & Afiliados
   partners: {
@@ -139,13 +116,6 @@ const about = {
       </>
     ),
     companies: [
-      {
-        name: "Wabtec Corporation",
-        logo: "/images/partners/logo-wabtec.svg",
-        link: "https://www.wabteccorp.com/",
-        description: "Global rail and transportation company where I serve as Senior Software Engineer in the Digital Technology organization.",
-        glowColor: "#ff0000"
-      },
       {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
@@ -195,20 +165,20 @@ const about = {
     title: "Studies & Certifications",
     institutions: [
       {
-        name: "AWS Certified Solutions Architect",
-        description: <>Advanced cloud architecture and services design on Amazon Web Services.</>,
+        name: "CS50: Introduction to Computer Science — Harvard University",
+        description: <>Foundational computer science and programming through Harvard's flagship course (edX, 2020).</>,
       },
       {
-        name: "University of Dom Bosco",
-        description: <>Bachelor's in Software Engineering with focus on distributed systems.</>,
+        name: "Certified Scrum Master (CSM) — Scrum Alliance",
+        description: <>Agile project management and Scrum methodology certification (2021).</>,
       },
       {
-        name: "Meta Frontend Developer Professional",
-        description: <>Advanced React, JavaScript ES6+, and modern frontend development practices.</>,
+        name: "Power BI Data Analyst — Microsoft Learn",
+        description: <>Data analysis, visualization, and business intelligence with Microsoft Power BI (2022).</>,
       },
       {
-        name: "Google Cloud Professional Developer",
-        description: <>Cloud-native application development and containerization strategies.</>,
+        name: "Full Stack Web Development — Rocketseat",
+        description: <>Full-stack development with React, Node.js, and modern web technologies (2022).</>,
       },
     ],
   },
@@ -218,7 +188,7 @@ const about = {
     skills: [
       {
         title: "Frontend Technologies",
-        description: <>Building modern, responsive applications with <InlineCode>React</InlineCode>, <InlineCode>Next.js</InlineCode>, <InlineCode>TypeScript</InlineCode>, and <InlineCode>Tailwind CSS</InlineCode>. Expert in state management with <InlineCode>Zustand</InlineCode> and <InlineCode>React Query</InlineCode>.</>,
+        description: <>Building modern, responsive applications with <InlineCode>Angular</InlineCode>, <InlineCode>React</InlineCode>, <InlineCode>Next.js</InlineCode>, <InlineCode>TypeScript</InlineCode>, and <InlineCode>Tailwind CSS</InlineCode>. State management with <InlineCode>NgRx</InlineCode>, <InlineCode>Zustand</InlineCode>, and <InlineCode>React Query</InlineCode>. Component libraries with <InlineCode>Radix UI</InlineCode> and <InlineCode>Micro-frontends</InlineCode> architecture.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
@@ -236,7 +206,7 @@ const about = {
       },
       {
         title: "Backend & APIs",
-        description: <>Developing scalable backend systems with <InlineCode>Node.js</InlineCode>, <InlineCode>Python FastAPI</InlineCode>, <InlineCode>Express.js</InlineCode>, and <InlineCode>GraphQL</InlineCode>. Database expertise in <InlineCode>PostgreSQL</InlineCode>, <InlineCode>MongoDB</InlineCode>, and <InlineCode>Redis</InlineCode>.</>,
+        description: <>Developing scalable backend systems with <InlineCode>Node.js</InlineCode>, <InlineCode>NestJS</InlineCode>, <InlineCode>Express.js</InlineCode>, <InlineCode>Java</InlineCode>, and <InlineCode>Spring Boot</InlineCode>. Database expertise in <InlineCode>PostgreSQL</InlineCode>, <InlineCode>MongoDB</InlineCode>, and <InlineCode>Redis</InlineCode>. Messaging with <InlineCode>RabbitMQ</InlineCode>, ORM with <InlineCode>Prisma</InlineCode>, and <InlineCode>WebSockets</InlineCode> for real-time features.</>,
         images: [
           {
             src: "/images/projects/project-01/harada-ai.png",
@@ -254,7 +224,7 @@ const about = {
       },
       {
         title: "Cloud & DevOps",
-        description: <>AWS cloud architecture with <InlineCode>EC2</InlineCode>, <InlineCode>Lambda</InlineCode>, <InlineCode>RDS</InlineCode>, <InlineCode>S3</InlineCode>, and <InlineCode>CloudFormation</InlineCode>. Container orchestration with <InlineCode>Docker</InlineCode> and <InlineCode>Kubernetes</InlineCode>. CI/CD with <InlineCode>GitHub Actions</InlineCode>.</>,
+        description: <>Cloud architecture on <InlineCode>AWS</InlineCode> and <InlineCode>GCP</InlineCode>. Container orchestration with <InlineCode>Docker</InlineCode> and <InlineCode>Kubernetes</InlineCode>. Infrastructure as code with <InlineCode>Terraform</InlineCode>. CI/CD with <InlineCode>GitHub Actions</InlineCode>. Secrets management with <InlineCode>HashiCorp Vault</InlineCode>. Monitoring & Observability.</>,
         images: [
           {
             src: "/images/projects/project-01/cloud-banner.jpg",
@@ -265,8 +235,8 @@ const about = {
         ],
       },
       {
-        title: "Emerging Technologies",
-        description: <>AI/ML integration with <InlineCode>OpenAI API</InlineCode>, <InlineCode>LangChain</InlineCode>, and <InlineCode>TensorFlow</InlineCode>. Blockchain development with <InlineCode>Solidity</InlineCode> and <InlineCode>Web3.js</InlineCode>. Real-time features with <InlineCode>Socket.io</InlineCode> and <InlineCode>WebRTC</InlineCode>.</>,
+        title: "Testing & Practices",
+        description: <>Automated testing with <InlineCode>Jest</InlineCode> and <InlineCode>Cypress</InlineCode>. Unit & Integration testing strategies. <InlineCode>System Design</InlineCode>, <InlineCode>Code Review</InlineCode>, and <InlineCode>Agile/Scrum</InlineCode> methodology. Event-Driven Architecture and Microservices patterns.</>,
         images: [
           {
             src: "/images/projects/project-01/blockchain.jpg",

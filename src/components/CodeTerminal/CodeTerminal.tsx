@@ -26,12 +26,12 @@ const CodeTerminal: React.FC = () => {
   };
 
   const fullCode = [
-    "// Pedro Trotta - Senior Software Engineer @ Wabtec",
+    "// Pedro Trotta - Senior Software Engineer",
     "",
     "interface SoftwareEngineer {",
     '  name: "Pedro Trotta";',
     '  role: "Senior Software Engineer";',
-    '  company: "Wabtec Corporation";',
+    '  status: "Open-Source Maintainer";',
     '  location: "Brazil";',
     '  experience: "6+ years";',
     "}",

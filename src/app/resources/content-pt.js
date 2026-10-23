@@ -102,32 +102,9 @@ const about = {
     ),
   },
   work: {
-    display: true,
-    title: "Cargo Atual",
-    experiences: [
-      {
-        company: "Wabtec Corporation",
-        timeframe: "2026 - Presente",
-        role: "Engenheiro de Software Sênior",
-        achievements: [
-          <>
-            Propriedade end-to-end de aplicações críticas na organização de Tecnologia Digital da Wabtec,
-            desde o desenvolvimento de novos produtos até a modernização e suporte de sistemas existentes
-            para uma empresa global de transporte ferroviário.
-          </>,
-          <>
-            Desenvolvimento stack-agnostic com <InlineCode>Node.js</InlineCode>, <InlineCode>Java/Spring Boot</InlineCode>,
-            <InlineCode>Angular</InlineCode> e <InlineCode>TypeScript</InlineCode>, adaptando as escolhas
-            tecnológicas aos requisitos de cada problema.
-          </>,
-          <>
-            Trabalho com Product Owners, stakeholders de negócios e equipes de engenharia nos EUA, América Latina
-            e outras regiões para transformar requisitos em software confiável e escalável.
-          </>,
-        ],
-        images: [],
-      }
-    ],
+    display: false,
+    title: "Experiência",
+    experiences: /** @type {Array<{company: string, timeframe: string, role: string, achievements: any[], images: any[]}>} */ ([]),
   },
   // Nova secao: Parceiros & Afiliados
   partners: {
@@ -139,13 +116,6 @@ const about = {
       </>
     ),
     companies: [
-      {
-        name: "Wabtec Corporation",
-        logo: "/images/partners/logo-wabtec.svg",
-        link: "https://www.wabteccorp.com/",
-        description: "Empresa global de transporte ferroviário onde atuo como Engenheiro de Software Sênior na organização de Tecnologia Digital.",
-        glowColor: "#ff0000"
-      },
       {
         name: "Axia Digital",
         logo: "/images/partners/logo-axia.png",
@@ -195,20 +165,20 @@ const about = {
     title: "Estudos & Certificacoes",
     institutions: [
       {
-        name: "AWS Certified Solutions Architect",
-        description: <>Arquitetura de nuvem avancada e design de servicos na Amazon Web Services.</>,
+        name: "CS50: Introduction to Computer Science — Harvard University",
+        description: <>Ciência da computação e programação pelo curso referência de Harvard (edX, 2020).</>,
       },
       {
-        name: "University of Dom Bosco",
-        description: <>Bacharelado em Engenharia de Software com foco em sistemas distribuidos.</>,
+        name: "Certified Scrum Master (CSM) — Scrum Alliance",
+        description: <>Gestão ágil de projetos e certificação em metodologia Scrum (2021).</>,
       },
       {
-        name: "Meta Frontend Developer Professional",
-        description: <>React avancado, JavaScript ES6+ e praticas modernas de desenvolvimento frontend.</>,
+        name: "Power BI Data Analyst — Microsoft Learn",
+        description: <>Análise de dados, visualização e business intelligence com Microsoft Power BI (2022).</>,
       },
       {
-        name: "Google Cloud Professional Developer",
-        description: <>Desenvolvimento de aplicacoes cloud-native e estrategias de containerizacao.</>,
+        name: "Full Stack Web Development — Rocketseat",
+        description: <>Desenvolvimento full-stack com React, Node.js e tecnologias web modernas (2022).</>,
       },
     ],
   },
@@ -218,7 +188,7 @@ const about = {
     skills: [
       {
         title: "Tecnologias Frontend",
-        description: <>Construindo aplicacoes modernas e responsivas com <InlineCode>React</InlineCode>, <InlineCode>Next.js</InlineCode>, <InlineCode>TypeScript</InlineCode> e <InlineCode>Tailwind CSS</InlineCode>. Especialista em gerenciamento de estado com <InlineCode>Zustand</InlineCode> e <InlineCode>React Query</InlineCode>.</>,
+        description: <>Construindo aplicações modernas e responsivas com <InlineCode>Angular</InlineCode>, <InlineCode>React</InlineCode>, <InlineCode>Next.js</InlineCode>, <InlineCode>TypeScript</InlineCode> e <InlineCode>Tailwind CSS</InlineCode>. Gerenciamento de estado com <InlineCode>NgRx</InlineCode>, <InlineCode>Zustand</InlineCode> e <InlineCode>React Query</InlineCode>. Bibliotecas de componentes com <InlineCode>Radix UI</InlineCode> e arquitetura de <InlineCode>Micro-frontends</InlineCode>.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
@@ -236,7 +206,7 @@ const about = {
       },
       {
         title: "Backend & APIs",
-        description: <>Desenvolvendo sistemas backend escalaveis com <InlineCode>Node.js</InlineCode>, <InlineCode>Python FastAPI</InlineCode>, <InlineCode>Express.js</InlineCode> e <InlineCode>GraphQL</InlineCode>. Expertise em bancos de dados como <InlineCode>PostgreSQL</InlineCode>, <InlineCode>MongoDB</InlineCode> e <InlineCode>Redis</InlineCode>.</>,
+        description: <>Desenvolvendo sistemas backend escaláveis com <InlineCode>Node.js</InlineCode>, <InlineCode>NestJS</InlineCode>, <InlineCode>Express.js</InlineCode>, <InlineCode>Java</InlineCode> e <InlineCode>Spring Boot</InlineCode>. Expertise em bancos de dados <InlineCode>PostgreSQL</InlineCode>, <InlineCode>MongoDB</InlineCode> e <InlineCode>Redis</InlineCode>. Mensageria com <InlineCode>RabbitMQ</InlineCode>, ORM com <InlineCode>Prisma</InlineCode> e <InlineCode>WebSockets</InlineCode> para tempo real.</>,
         images: [
           {
             src: "/images/projects/project-01/harada-ai.png",
@@ -254,7 +224,7 @@ const about = {
       },
       {
         title: "Cloud & DevOps",
-        description: <>Arquitetura de nuvem AWS com <InlineCode>EC2</InlineCode>, <InlineCode>Lambda</InlineCode>, <InlineCode>RDS</InlineCode>, <InlineCode>S3</InlineCode> e <InlineCode>CloudFormation</InlineCode>. Orquestracao de containers com <InlineCode>Docker</InlineCode> e <InlineCode>Kubernetes</InlineCode>. CI/CD com <InlineCode>GitHub Actions</InlineCode>.</>,
+        description: <>Arquitetura cloud em <InlineCode>AWS</InlineCode> e <InlineCode>GCP</InlineCode>. Orquestração de containers com <InlineCode>Docker</InlineCode> e <InlineCode>Kubernetes</InlineCode>. Infraestrutura como código com <InlineCode>Terraform</InlineCode>. CI/CD com <InlineCode>GitHub Actions</InlineCode>. Gestão de segredos com <InlineCode>HashiCorp Vault</InlineCode>. Monitoramento & Observabilidade.</>,
         images: [
           {
             src: "/images/projects/project-01/cloud-banner.jpg",
@@ -265,8 +235,8 @@ const about = {
         ],
       },
       {
-        title: "Tecnologias Emergentes",
-        description: <>Integracao de IA/ML com <InlineCode>OpenAI API</InlineCode>, <InlineCode>LangChain</InlineCode> e <InlineCode>TensorFlow</InlineCode>. Desenvolvimento blockchain com <InlineCode>Solidity</InlineCode> e <InlineCode>Web3.js</InlineCode>. Funcionalidades em tempo real com <InlineCode>Socket.io</InlineCode> e <InlineCode>WebRTC</InlineCode>.</>,
+        title: "Testes & Práticas",
+        description: <>Testes automatizados com <InlineCode>Jest</InlineCode> e <InlineCode>Cypress</InlineCode>. Estratégias de testes unitários e de integração. <InlineCode>System Design</InlineCode>, <InlineCode>Code Review</InlineCode> e metodologia <InlineCode>Agile/Scrum</InlineCode>. Arquitetura Event-Driven e padrões de Microsserviços.</>,
         images: [
           {
             src: "/images/projects/project-01/blockchain.jpg",

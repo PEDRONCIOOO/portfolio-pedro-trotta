@@ -91,10 +91,12 @@ export default function About() {
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith("mailto:contato@trotta.dev")) 
               .map((item) => item.link),
-            worksFor: {
-              "@type": "Organization",
-              name: about.work.experiences[0].company || "",
-            },
+            ...(about.work.experiences.length > 0 && {
+              worksFor: {
+                "@type": "Organization",
+                name: about.work.experiences[0].company,
+              },
+            }),
           }),
         }}
       />
