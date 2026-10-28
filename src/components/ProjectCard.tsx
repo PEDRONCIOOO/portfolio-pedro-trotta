@@ -53,6 +53,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       {videos && videos.length > 0 ? (
         <VideoPlayer
           src={videos[0]}
+          poster={images.length > 0 ? images[0] : undefined}
           style={{
             width: "100%",
             aspectRatio: "16 / 9",

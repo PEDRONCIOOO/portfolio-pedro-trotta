@@ -1,0 +1,61 @@
+---
+title: "Enois — Rede Social Brasileira para Profissionais de Tecnologia"
+publishedAt: "2026-10-01"
+summary: "Rede social open-source para a comunidade tech brasileira — feeds, comunidades, vagas, mentoria, eventos, blogs e carteira digital (Faisca), tudo sem anuncios ou paywall."
+images:
+  - "/images/projects/project-01/enois.png"
+team:
+  - name: "Pedro Trotta"
+    role: "Software Engineer"
+    avatar: "/images/pedro.jpeg"
+    linkedIn: "https://www.linkedin.com/in/pedro-trotta-853b17323/"
+link: "https://enois.ia.br"
+---
+
+## Visao Geral
+
+**Enois** e uma rede social gratuita e open-source construida para a comunidade tech brasileira. Diferente das plataformas tradicionais, o Enois nao tem planos pagos, anuncios ou paywalls — e feito por e para desenvolvedores, designers e profissionais de tecnologia que querem um espaco para compartilhar conhecimento, encontrar oportunidades e se conectar sem praticas predatorias.
+
+A plataforma reune feeds, comunidades, vagas de emprego, mentoria, eventos, blogs, jogos indie e uma carteira digital chamada **Faisca** — tudo em uma experiencia unica e coesa.
+
+[Plataforma](https://enois.ia.br)
+
+## Arquitetura da Plataforma
+
+### Frontend
+Aplicacao React 19 com TanStack Start e TanStack Router para roteamento full-stack e SSR. Busca de dados via TanStack Query, estilizacao com Tailwind CSS 4 e build com Vite 7. Gerenciamento de estado com Zustand e regras ESLint customizadas para fronteiras do projeto.
+
+### Backend
+API Spring Boot 4 + Java 25 seguindo arquitetura hexagonal (ports and adapters). O codigo e modularizado por dominio de negocio — identidade, feed, midia, rede, perfil, mensagens, notificacoes, busca, comunidade e admin — cada um com suas entidades de dominio, casos de uso, controllers REST e repositorios.
+
+### Infraestrutura
+Deploy no Amazon EKS via GitOps (Argo CD). Pushes na `main` disparam GitHub Actions → Docker build → publicacao no AWS ECR → atualizacao de manifesto → sincronizacao do cluster. MariaDB 11.4 em producao, H2 in-memory para desenvolvimento e testes. Migracoes gerenciadas pelo Flyway.
+
+## Funcionalidades Principais
+
+- **Feeds & Comunidades**: Compartilhamento de conteudo e espacos de discussao organizados por interesse
+- **Vagas de Emprego**: Quadro de vagas integrado como conteudo secundario
+- **Mentoria & Eventos**: Ferramentas para transferencia de conhecimento e eventos da comunidade
+- **Carteira Faisca**: Sistema de moeda digital para interacoes e reconhecimento na plataforma
+- **Autenticacao 2FA**: TOTP via apps autenticadores, login social (Google/Apple), verificacao por email
+- **Portal do Desenvolvedor & API Publica**: API REST autenticada por Bearer token para integracoes
+- **Notificacoes em Tempo Real**: Atualizacoes ao vivo em todas as atividades da plataforma
+- **Midia & GIFs**: Armazenamento ImageKit com migracao para S3, integracao Tenor/GIPHY
+- **Conformidade LGPD**: Minimizacao de dados e arquitetural
+
+## Stack Tecnologica
+
+**Frontend**: React 19, TanStack Start, TanStack Router, TanStack Query, Tailwind CSS 4, Vite 7, Zustand, Nitro (SSR)
+**Backend**: Spring Boot 4, Java 25, Maven, Flyway, Arquitetura Hexagonal
+**Banco de Dados**: MariaDB 11.4 (prod), H2 (dev/test)
+**Auth**: Spring Security, OAuth2, TOTP 2FA, Login Social (Google/Apple)
+**Infraestrutura**: Amazon EKS, AWS ECR, GitHub Actions, Argo CD (GitOps)
+**Midia**: ImageKit, APIs Tenor/GIPHY
+**Licenca**: GPL-3.0
+
+## No Que Trabalhei
+
+- Contribuindo para o codigo open-source do frontend — componentes React 19, paginas TanStack Router e estilizacao Tailwind 4
+- Contribuindo para a API open-source do backend — controllers Spring Boot 4, modulos de dominio hexagonal e migracoes Flyway
+- Trabalhando em funcionalidades da plataforma nos modulos de feed, comunidade e perfil
+- Ajudando a moldar a experiencia de desenvolvimento com code reviews e discussoes arquiteturais

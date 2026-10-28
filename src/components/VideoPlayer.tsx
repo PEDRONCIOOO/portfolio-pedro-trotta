@@ -2,22 +2,18 @@
 
 interface VideoPlayerProps {
   src: string;
+  poster?: string;
   style?: React.CSSProperties;
 }
 
-export const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, style }) => {
+export const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster, style }) => {
   return (
     <video
       autoPlay
       muted
       loop
       playsInline
-      onError={(e) => {
-        console.error("Video failed to load:", src);
-        console.error("Error details:", e);
-      }}
-      onLoadStart={() => console.log("Video loading started:", src)}
-      onCanPlay={() => console.log("Video can play:", src)}
+      poster={poster}
       style={style}
     >
       <source src={src} type="video/mp4" />

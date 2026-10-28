@@ -1,0 +1,65 @@
+---
+title: "Turbo Entregas"
+publishedAt: "2026-08-01"
+summary: "Ecossistema de delivery multi-plataforma full-stack — app do cliente, app do entregador e painel administrativo com rastreamento em tempo real, pagamentos multi-gateway e operacoes financeiras automatizadas para o mercado brasileiro."
+images:
+  - "/images/projects/project-01/turbo-entregas.png"
+videos:
+  - "/videos/turbo-entregas.mp4"
+team:
+  - name: "Pedro Trotta"
+    role: "Software Engineer"
+    avatar: "/images/pedro.jpeg"
+    linkedIn: "https://www.linkedin.com/in/pedro-trotta-853b17323/"
+link: "https://cliente.turboentregas.com.br"
+---
+
+## Visao Geral
+
+Turbo Entregas e uma plataforma de delivery de nivel producao construida para o mercado brasileiro, conectando clientes, entregadores e donos de loja atraves de tres aplicacoes integradas. O sistema gerencia o ciclo completo do pedido — desde navegacao e checkout ate rastreamento em tempo real e pagamentos automaticos — com suporte para pedidos de comida, entregas de encomendas e rotas multi-parada.
+
+A plataforma consiste em um app Flutter para clientes, um app Flutter para entregadores e um painel administrativo Laravel/API que serve como backbone de todas as operacoes.
+
+[App da Plataforma](https://cliente.turboentregas.com.br)
+
+## Arquitetura da Plataforma
+
+### App do Cliente
+App mobile Flutter com 35+ modulos de funcionalidades incluindo navegacao de lojas, gerenciamento de carrinho, checkout com multiplos metodos de pagamento, rastreamento de pedido em tempo real via Google Maps, chat no app com entregadores, sistema de carteira, pontos de fidelidade, programa de indicacao e notificacoes push.
+
+### App do Entregador
+App Flutter dedicado para entregadores com aceitacao/rejeicao de pedidos, rastreamento GPS em tempo real via WebSocket, atualizacoes de localizacao em background, dashboard de ganhos, gerenciamento de conta PIX, controle de dinheiro em maos e saque automatico via integracao ASAAS.
+
+### Painel Admin & API
+Backend Laravel 10 com 40+ controllers de API, 130+ modelos Eloquent e um dashboard administrativo completo. Gerencia zonas, lojas, produtos, pedidos, atribuicoes de entrega, relatorios financeiros, planos de assinatura, campanhas e tokens de API para automacao de pedidos externos.
+
+## Funcionalidades Principais
+
+- **Rastreamento em Tempo Real**: Streaming GPS ao vivo via WebSocket do entregador para o cliente, com visualizacao Google Maps e atribuicao de entrega por zona
+- **Pagamentos Multi-Gateway**: PIX (Brasil), Mercado Pago, Stripe, PayPal, Razorpay, Paystack e metodos offline — tudo em um fluxo de checkout unificado
+- **Sistema de Encomendas**: Calculo de taxa por distancia, multiplas categorias de encomenda e suporte a paradas adicionais para rotas multi-drop
+- **Operacoes Financeiras Automatizadas**: Integracao ASAAS para transferencias PIX automaticas para entregadores, atualizacoes de status via webhook e rastreamento de pagamentos
+- **API Externa**: API REST autenticada por Bearer token permitindo sistemas terceiros criar pedidos, consultar status e gerenciar saldos programaticamente
+- **Fidelidade & Recompensas**: Acumulo de pontos, bonus de indicacao, promocoes cashback e bonus de recarga de carteira
+- **Chat em Tempo Real**: Mensagens no app entre clientes, entregadores e lojas via Firebase e canais WebSocket
+
+## Stack Tecnologica
+
+**Mobile (Cliente + Entregador)**: Flutter 3.27, Dart, GetX, Drift (DB local)
+**Backend**: Laravel 10, PHP 8.2, MySQL com queries espaciais
+**Tempo Real**: Laravel WebSockets, canais WebSocket para localizacao ao vivo
+**Auth**: Laravel Passport (OAuth2), Firebase Auth, login social (Google, Facebook, Apple)
+**Pagamentos**: PIX, ASAAS, Mercado Pago, Stripe, PayPal, Razorpay
+**Mapas & Localizacao**: Google Maps SDK, Geolocator, rastreamento em background
+**Notificacoes**: Firebase Cloud Messaging (FCM)
+**Relatorios**: mPDF para PDF, Maatwebsite Excel para exportacoes
+**Infraestrutura**: Firebase, REST API v1
+
+## No Que Trabalhei
+
+- Construi e mantive funcionalidades nas tres aplicacoes — fluxo de pedidos do cliente, operacoes do entregador e configuracao do painel admin
+- Integrei o gateway de pagamento ASAAS para transferencias PIX automaticas para entregadores, incluindo webhook handling para atualizacoes de status
+- Implementei o sistema de API externa com autenticacao por Bearer token, permitindo plataformas terceiras criar pedidos e consultar status programaticamente
+- Desenvolvi o modulo de entregas de encomendas com precificacao por distancia, roteamento multi-parada e gerenciamento de paradas adicionais
+- Construi o dashboard financeiro do entregador — relatorios de ganhos, solicitacoes de saque, configuracao de conta PIX e reconciliacao de dinheiro em maos
+- Trabalhei no rastreamento de entrega em tempo real com streaming de localizacao via WebSocket e integracao Google Maps no lado do cliente

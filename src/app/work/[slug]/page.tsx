@@ -126,6 +126,7 @@ export default function Project({ params }: WorkParams) {
       {post.metadata.videos && post.metadata.videos.length > 0 ? (
         <VideoPlayer
           src={post.metadata.videos[0]}
+          poster={post.metadata.images?.length > 0 ? post.metadata.images[0] : undefined}
           style={{
             width: "100%",
             aspectRatio: "16 / 9",

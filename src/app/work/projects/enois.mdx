@@ -1,0 +1,61 @@
+---
+title: "Enois — Brazilian Social Network for Tech Professionals"
+publishedAt: "2026-10-01"
+summary: "Open-source social network for the Brazilian tech community — feeds, communities, jobs, mentorship, events, blogs, and a digital wallet (Faisca), all without ads or paywalls."
+images:
+  - "/images/projects/project-01/enois.png"
+team:
+  - name: "Pedro Trotta"
+    role: "Software Engineer"
+    avatar: "/images/pedro.jpeg"
+    linkedIn: "https://www.linkedin.com/in/pedro-trotta-853b17323/"
+link: "https://enois.ia.br"
+---
+
+## Overview
+
+**Enois** is a free, open-source social network built for the Brazilian tech community. Unlike traditional platforms, Enois has no paid plans, advertisements, or paywalls — it's built by and for developers, designers, and tech professionals who want a space to share knowledge, find opportunities, and connect without predatory practices.
+
+The platform brings together feeds, communities, job listings, mentorship, events, blogs, indie games, and a digital wallet called **Faisca** — all in a single, cohesive experience.
+
+[Platform](https://enois.ia.br)
+
+## Platform Architecture
+
+### Frontend
+React 19 application powered by TanStack Start and TanStack Router for full-stack routing and SSR. Data fetching via TanStack Query, styled with Tailwind CSS 4, and built with Vite 7. State management handled by Zustand with custom ESLint rules enforcing project boundaries.
+
+### Backend
+Spring Boot 4 + Java 25 API following hexagonal architecture (ports and adapters). The codebase is modularized by business domain — identity, feed, media, network, profile, messaging, notifications, search, community, and admin — each with its own domain entities, use cases, REST controllers, and repositories.
+
+### Infrastructure
+Deployed on Amazon EKS via GitOps (Argo CD). Pushes to `main` trigger GitHub Actions → Docker build → AWS ECR publish → manifest update → cluster sync. MariaDB 11.4 in production, H2 in-memory for development and testing. Migrations managed by Flyway.
+
+## Key Features
+
+- **Feeds & Communities**: Content sharing and discussion spaces organized by interest and topic
+- **Job Listings**: Integrated job board as secondary content — not a recruitment marketplace
+- **Mentorship & Events**: Tools for knowledge transfer and community-driven events
+- **Faisca Wallet**: Digital currency system for platform interactions and recognition
+- **Two-Factor Auth**: TOTP via authenticator apps, social login (Google/Apple), email verification
+- **Developer Portal & Public API**: Bearer token-authenticated REST API for third-party integrations
+- **Real-Time Notifications**: Live updates across all platform activities
+- **Media & GIFs**: ImageKit storage with S3 migration path, Tenor/GIPHY integration
+- **LGPD-Compliant**: Data minimization is architectural — not a data broker by design
+
+## Tech Stack
+
+**Frontend**: React 19, TanStack Start, TanStack Router, TanStack Query, Tailwind CSS 4, Vite 7, Zustand, Nitro (SSR)
+**Backend**: Spring Boot 4, Java 25, Maven, Flyway, Hexagonal Architecture
+**Database**: MariaDB 11.4 (prod), H2 (dev/test)
+**Auth**: Spring Security, OAuth2, TOTP 2FA, Social Login (Google/Apple)
+**Infrastructure**: Amazon EKS, AWS ECR, GitHub Actions, Argo CD (GitOps)
+**Media**: ImageKit, Tenor/GIPHY APIs
+**License**: GPL-3.0
+
+## What I Worked On
+
+- Contributing to the open-source frontend codebase — React 19 components, TanStack Router pages, and Tailwind 4 styling
+- Contributing to the open-source backend API — Spring Boot 4 controllers, hexagonal domain modules, and Flyway migrations
+- Working on platform features across the feed, community, and profile modules
+- Helping shape the developer experience with code reviews and architectural discussions
