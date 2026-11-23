@@ -62,12 +62,12 @@ const social = [
 const home = {
   label: "Home",
   title: `${person.name} Portfolio`,
-  description: `Pedro Trotta - Software Engineer with 6+ years of experience in React, Next.js, Node.js, AWS, and cloud-native solutions. View projects, blog, and professional portfolio.`,
+  description: `Pedro Trotta - Senior Software Engineer with 7+ years of experience in fintech, digital banking & BaaS platforms. Angular, React, TypeScript, Node.js, Java/Spring Boot, AWS.`,
   headline: <>Engineering software that moves the world.</>,
   subline: (
     <>
-      I'm <strong>Pedro Trotta</strong>, a Senior Software Engineer with 6+ years
-      of experience architecting high-performance solutions for enterprise, SaaS & transportation platforms.
+      I'm <strong>Pedro Trotta</strong>, a Senior Software Engineer with 7+ years
+      of experience architecting fintech, digital banking & BaaS platforms.
     </>
   ),
   ctaText: "View Projects",
@@ -94,10 +94,10 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Pedro is a Brazilian-based full-stack software engineer specializing in cutting-edge technologies 
-        and cloud-native solutions. With expertise spanning frontend frameworks, backend architectures, 
-        DevOps practices, and AWS cloud services, he transforms complex business requirements into 
-        scalable, high-performance software ecosystems that drive innovation.
+        Pedro is a Brazilian-based Senior Software Engineer focused on fintech and digital banking
+        platforms, including white-label multi-tenant banking, crypto exchange, and BaaS products.
+        Deep experience with Angular, React, TypeScript, Node.js/NestJS, Java/Spring Boot, PostgreSQL,
+        and Redis, plus microservices, event-driven architecture, and REST API design.
       </>
     ),
   },

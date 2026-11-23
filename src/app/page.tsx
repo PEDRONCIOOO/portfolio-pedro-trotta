@@ -88,8 +88,8 @@ export default function Home() {
             <Column gap="l">
               <RevealFx translateY="4" fillWidth horizontal="start">
                 <T
-                  en={<StatusBadge role="Open-Source Maintainer · Senior Software Engineer" />}
-                  pt={<StatusBadge role="Open-Source Maintainer · Engenheiro de Software Sênior" />}
+                  en={<StatusBadge role="Senior Software Engineer" company="Alignerr" href="https://alignerr.com" />}
+                  pt={<StatusBadge role="Engenheiro de Software Sênior" company="Alignerr" href="https://alignerr.com" />}
                 />
               </RevealFx>
 
@@ -102,8 +102,8 @@ export default function Home() {
               <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
                 <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" className={styles.subline}>
                   <T
-                    en={<>I'm <strong>Pedro Trotta</strong>, a Senior Software Engineer with 6+ years of experience architecting high-performance solutions for enterprise, SaaS &amp; transportation platforms.</>}
-                    pt={<>Eu sou <strong>Pedro Trotta</strong>, Engenheiro de Software Sênior com 6+ anos de experiência arquitetando soluções de alta performance para plataformas enterprise, SaaS e transporte.</>}
+                    en={<>I'm <strong>Pedro Trotta</strong>, a Senior Software Engineer with 7+ years of experience architecting fintech, digital banking &amp; BaaS platforms.</>}
+                    pt={<>Eu sou <strong>Pedro Trotta</strong>, Engenheiro de Software Sênior com 7+ anos de experiência arquitetando plataformas fintech, banking digital &amp; BaaS.</>}
                   />
                 </Text>
               </RevealFx>

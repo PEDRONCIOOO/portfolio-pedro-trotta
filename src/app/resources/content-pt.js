@@ -62,12 +62,12 @@ const social = [
 const home = {
   label: "Inicio",
   title: `Portfolio de ${person.name}`,
-  description: `Pedro Trotta - Engenheiro de Software com mais de 6 anos de experiencia em React, Next.js, Node.js, AWS e solucoes cloud-native. Veja projetos, blog e portfolio profissional.`,
+  description: `Pedro Trotta - Engenheiro de Software Sênior com 7+ anos de experiência em fintech, banking digital e plataformas BaaS. Angular, React, TypeScript, Node.js, Java/Spring Boot, AWS.`,
   headline: <>Engenharia de software que move o mundo.</>,
   subline: (
     <>
-      Eu sou <strong>Pedro Trotta</strong>, Engenheiro de Software Senior com 6+ anos
-      de experiencia arquitetando solucoes de alta performance para plataformas enterprise, SaaS e transporte.
+      Eu sou <strong>Pedro Trotta</strong>, Engenheiro de Software Sênior com 7+ anos
+      de experiência arquitetando plataformas fintech, banking digital e BaaS.
     </>
   ),
   ctaText: "Ver Projetos",
@@ -94,10 +94,10 @@ const about = {
     title: "Introducao",
     description: (
       <>
-        Pedro e um engenheiro de software full-stack baseado no Brasil, especializado em tecnologias de ponta
-        e solucoes cloud-native. Com expertise abrangendo frameworks frontend, arquiteturas backend,
-        praticas DevOps e servicos de nuvem AWS, ele transforma requisitos de negocios complexos em
-        ecossistemas de software escalaveis e de alta performance que impulsionam a inovacao.
+        Pedro é um Engenheiro de Software Sênior baseado no Brasil, focado em plataformas fintech e
+        banking digital, incluindo banking white-label multi-tenant, exchanges de cripto e produtos BaaS.
+        Experiência profunda com Angular, React, TypeScript, Node.js/NestJS, Java/Spring Boot, PostgreSQL
+        e Redis, além de microsserviços, arquitetura event-driven e design de APIs REST.
       </>
     ),
   },
