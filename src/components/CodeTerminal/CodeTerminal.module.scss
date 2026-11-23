@@ -65,33 +65,33 @@
   color: #d4d4d4; // Default text color (VS Code)
   overflow-wrap: break-word; // Modern alternative to word-wrap
 
-  // Warm-red syntax highlighting (matching brand)
+  // Yellow/amber syntax highlighting (Alignerr brand)
   :global(.keyword) {
-    color: #e06c75; // Soft red for keywords
+    color: #e5c07b; // Gold for keywords
   }
 
   :global(.type) {
-    color: #d19a66; // Warm amber for types
+    color: #f0c674; // Warm yellow for types
   }
 
   :global(.string) {
-    color: #ce9178; // Orange/brown for strings
+    color: #f5d76e; // Bright amber for strings
   }
 
   :global(.property) {
-    color: #e5c07b; // Warm gold for object properties
+    color: #d4aa00; // Deep gold for object properties
   }
 
   :global(.boolean) {
-    color: #e06c75; // Soft red for boolean values
+    color: #f0c674; // Warm yellow for boolean values
   }
 
   :global(.function) {
-    color: #dcdcaa; // Yellow for function names
+    color: #ffd866; // Bright yellow for function names
   }
 
   :global(.number) {
-    color: #d19a66; // Warm amber for numbers
+    color: #e5c07b; // Gold for numbers
   }
 
   :global(.comment) {
